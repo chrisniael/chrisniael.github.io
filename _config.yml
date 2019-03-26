@@ -16,7 +16,7 @@
 title: 沈煜的博客
 email: shenyu@shenyu.me
 description: >- # this means to ignore newlines until "baseurl:"
-  Less is more.
+  SHENYU.ME
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://shenyu.me" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  chrisniael
@@ -24,6 +24,8 @@ github_username:  chrisniael
 # Build settings
 markdown: kramdown
 show_excerpts: true
+minima:
+  date_format: "%Y年%-m月%-d日"
 plugins:
   - jekyll-feed
   - jekyll-assets
