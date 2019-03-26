@@ -23,7 +23,7 @@ github_username:  chrisniael
 
 # Build settings
 markdown: kramdown
-excerpt_separator: <!--excerpt--> # 摘要分隔符
+show_excerpts: true
 plugins:
   - jekyll-feed
   - jekyll-assets
