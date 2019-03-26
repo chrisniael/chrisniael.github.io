@@ -2,7 +2,20 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%- seo -%}
+  {% assign title = site.title %}
+  {% if site.title %}
+    {% if paginator %}
+      {% if paginator.page != 1 %}
+        {% assign title = "第" | append: paginator.page | append: "页 | " | append: site.title %}
+      {% endif %}
+    {% else %}
+      {% if page.title %}
+        {% assign title = page.title | append: " | " | append: site.title %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+  <title>{{ title }}</title>
+  {%- seo title=false -%}
   {% asset main.css %}
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
