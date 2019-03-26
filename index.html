@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  {%- if site.posts.size > 0 -%}
+    <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> -->
+    <ul class="post-list">
+      {% for post in paginator.posts %}
+      <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+        <p><a href="{{ post.url | relative_url }}">阅读全文...</a></p>
+      </li>
+      {%- endfor -%}
+    </ul>
+
+		<!-- Pagination links -->
+    {% if paginator.total_pages > 1 %}
+      <div class="pagination">
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path }}" class="previous">&laquo; 上一页</a>
+        {% else %}
+          <span class="previous">&laquo; 上一页</span>
+        {% endif %}
+        <span class="page_number ">
+          <!-- Page: {{ paginator.page }} of {{ paginator.total_pages }} -->
+          {% for page in (1..paginator.total_pages) %}
+            {% if page == paginator.page %}
+              <em>{{ page }}</em>
+            {% elsif page == 1 %}
+            <a href="{{ paginator.previous_page_path }}">{{ page }}</a>
+            {% else %}
+              <a href="{{ site.paginate_path | replace: ':num', page }}">{{ page }}</a> 
+            {% endif %}
+          {% endfor %}
+        </span>
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path }}" class="next">下一页 &raquo;</a>
+        {% else %}
+          <span class="next ">下一页 &raquo;</span>
+        {% endif %}
+      </div>
+    {% endif %}
+  {%- endif -%}
+
+</div>

@@ -13,6 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+lang: zh
 title: 沈煜的博客
 email: shenyu@shenyu.me
 description: >- # this means to ignore newlines until "baseurl:"
@@ -31,6 +32,7 @@ plugins:
   - jekyll-feed
   - jekyll-assets
   - jekyll-seo-tag
+  - jekyll-paginate
 
 assets:
   source_maps: true # false on JEKYLL_ENV=production
@@ -52,6 +54,9 @@ assets:
     baseurl: false
     destination: true
     url: https://cdn.shenyu.me
+
+paginate: 5
+paginate_path: "/blog/page:num/"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
