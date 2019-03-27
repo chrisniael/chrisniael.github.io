@@ -27,6 +27,7 @@ permalink: /about/
 * HHKB Professional2 Type-S
 * Macbook Pro 2016 (15英寸, 2016)
 * LG UltraFine 5K 显示屏
+* 罗技 MX Master 2S
 * Appple Trackpad 2代
 * Kindle Oasis 2代
 * 黑莓 BlackBerry KEY2
