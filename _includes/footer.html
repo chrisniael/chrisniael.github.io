@@ -14,10 +14,10 @@
             {%- else -%}
               {{ site.title | escape }}
             {%- endif -%}
-            </li>
-            {%- if site.email -%}
+          </li>
+          {%- if site.email -%}
             <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {%- endif -%}
+          {%- endif -%}
         </ul>
       </div>
 
@@ -31,8 +31,12 @@
     </div>
 
     <div class="footer-col-wrapper">
-      <div class="footer-col">
-        <a href="http://www.miitbeian.gov.cn" target="_blank">{{ site.icp }}</a>
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            <a href="http://www.miitbeian.gov.cn" target="_blank"><span class="username" style="font-size: 14px">{{ site.icp }}</span></a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
