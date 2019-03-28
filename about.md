@@ -12,7 +12,7 @@ permalink: /about/
 
 目前使用的电竞外设（2019/03/27 更新）：
 
-* 鼠标：罗技 PRO LIGHTSPEED 
+* 鼠标：罗技 PRO LIGHTSPEED
 * 鼠标垫：华硕 魔毯 ROG WHETSTONE
 * 键盘：美商海盗船 K65 RGB
 * 显示器：华硕 PG259Q

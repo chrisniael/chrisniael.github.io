@@ -24,7 +24,7 @@ layout: default
       {%- endfor -%}
     </ul>
 
-		<!-- Pagination links -->
+    <!-- Pagination links -->
     {% if paginator.total_pages > 1 %}
       <div class="pagination">
         {% if paginator.previous_page %}
@@ -39,7 +39,7 @@ layout: default
             {% elsif page == 1 %}
             <a href="{{ paginator.previous_page_path | relative_url }}">{{ page }}</a>
             {% else %}
-              <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a> 
+              <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
             {% endif %}
           {% endfor %}
         </span>
