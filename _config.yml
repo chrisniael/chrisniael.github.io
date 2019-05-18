@@ -18,7 +18,7 @@ author: 沈煜
 title: 沈煜的博客
 email: shenyu@shenyu.me
 description: >- # this means to ignore newlines until "baseurl:"
-  SHENYU.ME
+  Less is more.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://shenyu.me" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  chrisniael
