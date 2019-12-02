@@ -23,8 +23,8 @@ QQ 邮箱支持 POP3/SMTP，IMAP/SMTP，Exchange 这三种服务，个人感觉�
 
 ## 方案二（最佳）
 
-* iOS ：Exchange
-* ipadOS ：Exchange
+* iOS ：IMAP/SMTP
+* ipadOS ：IMAP/SMTP
 * macOS ：IMAP/SMTP
 
 优点：设备推送消息、红点可以同步消除（这个对于全家桶体验至关重要）。
