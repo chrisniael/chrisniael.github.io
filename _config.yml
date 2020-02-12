@@ -27,6 +27,7 @@ icp: 苏ICP备16021330号
 # Build settings
 markdown: kramdown
 show_excerpts: true
+excerpt_separator: <!--excerpt-->
 minima:
   date_format: "%Y年%-m月%-d日"
 plugins:
