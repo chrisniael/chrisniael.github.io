@@ -4,11 +4,15 @@ title: 苹果全家桶使用 QQ 邮箱最佳方式
 date: 2019-11-23 23:00:00 +8
 ---
 
-QQ 邮箱支持 POP3/SMTP，IMAP/SMTP，Exchange 这三种服务，个人感觉这三种服务在使用上 Exchange 体验是最好的，其次是 IMAP/SMTP，POP3/SMTP 最差，因为 POP3 协议不会把客户端对邮件的操作反馈到邮件服务器上（比如：标记邮件已读、移动邮件）。说 Exchange 协议是最好的，是因为使用 Exchange 协议的客户端获取新邮件的方式不是客户端主动去拉取，而是邮件服务器直接推送过来的，所以 Exchange 协议在获取新邮件的实时性方面最好。可是，macOS 自带的邮件 App 缺不支持手动配置 Exchange 服务器，所以 macOS 就不能通过 Exchange 协议收发 QQ 邮箱的邮件。
+QQ 邮箱支持 POP3/SMTP，IMAP/SMTP，Exchange 这三种服务，这三种服务在使用上 Exchange 体验是最好的，其次是 IMAP/SMTP，POP3/SMTP 最差。
 
-<!--excerpt-->
+<!--excerpt--> 
 
-下面列举两个可选的方案，以及各自的优缺点：
+POP3 协议不会把客户端对邮件的操作反馈到邮件服务器上，比如：标记邮件已读、移动邮件，体验自然差。
+
+说 Exchange 协议是最好的，是因为使用 Exchange 协议的客户端获取新邮件的方式不是客户端主动去拉取，而是邮件服务器直接推送过来的，所以 Exchange 协议在获取新邮件的实时性方面最好。但是，macOS 自带的邮件 App 缺不支持手动配置 Exchange 服务器，所以 macOS 不能使用 Exchange 协议收发 QQ 邮箱的邮件。
+
+根据上面分析各个服务的优缺点，推荐两个苹果全家桶使用 QQ 邮箱的方案：
 
 ## 方案一
 
