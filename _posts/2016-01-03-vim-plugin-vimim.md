@@ -102,7 +102,7 @@ let g:Vimim_cloud = 'sogou,baidu,qq,google'
   这个功能的缺点就是当上下文中存在搜索拼音的本身时，就会搜索不到拼音对应的中文。
 
 
-## 参考资料
+## 参考链接
 
-* [Berkeley DB (wikipedia.org)](https://zh.wikipedia.org/wiki/Berkeley_DB)
-* [VimIM (wikipedia.org)](https://zh.wikipedia.org/wiki/VimIM)
+* [Berkeley DB](https://zh.wikipedia.org/wiki/Berkeley_DB), wikipedia.org
+* [VimIM](https://zh.wikipedia.org/wiki/VimIM), wikipedia.org

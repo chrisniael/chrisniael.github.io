@@ -57,7 +57,7 @@ Safari 会根据官方推荐的图标尺寸，匹配 `<link>` 标签里定义的
 如果没有使用 `<link>` 指定 Web Clip 图标，Safari 会根据官方推荐的图标尺寸，匹配网站根目录下 `apple-touch-icon` 为前缀的图标，如果没有匹配到，则会使用 `apple-touch-icon.png` 作为默认的 Web Clip 图标。
 
 
-## 参考资料
+## 参考链接
 
-* [Safari Web Content Guide](https://developer.apple.com/library/iad/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW4)
-* [iOS Human Interface Guidelines](https://developer.apple.com/library/iad/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27)
+* [Configuring Web Applications](https://developer.apple.com/library/iad/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW4), developer.apple.com
+* [iOS Human Interface Guidelines](https://developer.apple.com/library/iad/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27), developer.apple.com

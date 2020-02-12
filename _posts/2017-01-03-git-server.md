@@ -426,8 +426,8 @@ htpasswd 可以用来给网站做简单的加密访问功能，这里将它用�
 现在访问 http://git.shenyu.me 就需要输入账号和密码了。
 
 
-## 参考资料
+## 参考链接
 
-* [Gitosis (GitHub)](https://github.com/res0nat0r/gitosis)
-* [Gitweb (Arch Linux)](https://wiki.archlinux.org/index.php/Gitweb#Configuration)
-* [htpasswd (Apache)](https://httpd.apache.org/docs/2.4/programs/htpasswd.html)
+* [Gitosis](https://github.com/res0nat0r/gitosis), github.com
+* [Gitweb](https://wiki.archlinux.org/index.php/Gitweb), wiki.archlinux.org
+* [htpasswd 官网](https://httpd.apache.org/docs/2.4/programs/htpasswd.html)

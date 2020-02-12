@@ -28,6 +28,6 @@ date: 2019-04-08 09:35:00 +8
 
 上面的操作可以删除一页的所有关注，只要重复对剩下页面执行，就可以很快取消关注所有不想关注的人。注意，当操作很频繁的时候，可能会要求输入验证码。
 
-## 参考
+## 参考链接
 
-* [Double dollar $$() vs Dollar sign $() in Chrome console behavior (stackoverflow.com)](https://stackoverflow.com/questions/35682890/double-dollar-vs-dollar-sign-in-chrome-console-behavior)
+* [Double dollar $$() vs Dollar sign $() in Chrome console behavior](https://stackoverflow.com/a/35682911), Denys Séguret

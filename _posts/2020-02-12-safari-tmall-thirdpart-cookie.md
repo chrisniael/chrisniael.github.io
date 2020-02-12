@@ -69,7 +69,7 @@ Chrome 对这种从第三方网站触发的携带 Cookie 的请求的处理是�
     Set-Cookie: widget_session=abc123; SameSite=None; Secure
     ```
 
-## 参考
+## 参考链接
 
 * [解决Chrome访问天猫PC端弹出“您的浏览器限制了第三方Cookie...”的问题](https://juejin.im/post/5da13ed8f265da5bbe2a3723), Hal74
 * [Cookie 的 SameSite 属性](https://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html), ruanyifeng

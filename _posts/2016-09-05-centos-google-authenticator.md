@@ -227,8 +227,8 @@ google-authenticator [<options>]
 
 现在重新使用 SSH 登录服务器，就会要求输入密码和 `Verification code` 来验证身份。如果登陆时遇到问题，请查看日志文件 `/var/log/secure`。
 
-## 参考资料
+## 参考链接
 
-* [Google Authenticator (GitHub)](https://github.com/google/google-authenticator)
-* [Playing with two-factor authentication in Linux using Google Authenticator (Remi Bergsma's blog)](https://blog.remibergsma.com/2013/06/08/playing-with-two-facor-authentication-in-linux-using-google-authenticator/)
-* [Two-Step Authentication For SSH On Centos 6 Using Google Authenticator (David Lehman's Blog)](http://blog.nowherelan.com/2014/01/04/two-step-authentication-for-ssh-on-centos-6-using-google-authenticator/)
+* [Google Authenticator](https://github.com/google/google-authenticator), github.com
+* [Playing with two-factor authentication in Linux using Google Authenticator](https://blog.remibergsma.com/2013/06/08/playing-with-two-facor-authentication-in-linux-using-google-authenticator/), Remi Bergsma
+* [Two-Step Authentication For SSH On Centos 6 Using Google Authenticator](http://blog.nowherelan.com/2014/01/04/two-step-authentication-for-ssh-on-centos-6-using-google-authenticator/), David Lehman
