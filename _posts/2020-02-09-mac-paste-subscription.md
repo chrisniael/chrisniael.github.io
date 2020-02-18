@@ -19,7 +19,7 @@ Mac 上最优雅的剪切板管理工具莫过于 Paste，从 2.6.0 版本开始
 
 之前是一次性付费购买的老用户可以下载 2.6.0 之前的版本继续使用 Paste。
 
-* Paste 官网可以下载到 2.5.7 版本。
+* Paste 官网可以下载到 2.5.8 版本。
 
   [https://pasteapp.io/mac/legacy/download/](https://pasteapp.io/mac/legacy/download/)
 * HomeBrew 目前可以安装到 2.5.5 版本。
