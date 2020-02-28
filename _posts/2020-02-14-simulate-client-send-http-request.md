@@ -27,9 +27,26 @@ date: 2020-02-14 22:07:21 +8
 * HTTP(s) 调试代理工具
   * Proxyman (Mac)
 * Android 逆向工程工具
-  * apktool : .xml, .smali
-  * dex2jar : .jar
-  * jd-gui : .java
+  * [apktool](https://github.com/iBotPeaches/Apktool) : .apk -> .xml, .smali, .so
+
+      ```bash
+      apktool d <file_apk>
+      ```
+
+  * unzip: .apk -> .dex
+  * [dex2jar](https://github.com/pxb1988/dex2jar) : .dex -> .jar
+
+      ```bash
+      d2j-dex2jar classes.dex
+      d2j-dex2jar classes2.dex
+      ```
+
+  * [jd-gui](https://github.com/java-decompiler/jd-gui) : .jar -> .java
+
+      ```txt
+      classes-dex2jar.jar
+      classes2-dex2jar.jar
+      ```
 
 
 ## 模拟发送 HTTP(s) 请求
