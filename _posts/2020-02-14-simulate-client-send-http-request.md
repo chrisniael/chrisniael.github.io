@@ -8,9 +8,13 @@ date: 2020-02-14 22:07:21 +8
 ## HTTP(S) API 安全设计
 
 * 身份认证
+
+    标志用户身份。
+
 * 防止数据篡改
 
     劫持某个请求后，篡改这个请求的某个参数数值，然后再发送。
+
 * 时效性
 
     劫持某个请求后，再发送同样的请求。
@@ -48,15 +52,22 @@ date: 2020-02-14 22:07:21 +8
       classes2-dex2jar.jar
       ```
 
-
 ## 模拟发送 HTTP(s) 请求
+
+* s-, --silent : 不显示进度条和错误信息。
+* -c, --cookie-jar &lt;filename&gt; : 指定要保存 cookie 的文件。
+* -b, --cookie &lt;data|filename&gt; : 指定要使用的 cookie 值或由 -c, --cookie-jar 保存的 cookie 文件。
+* --request : 指定 HTTP 请求使用的方法。
+* --url :  指定访问的 URL。
+* --data : 指定 POST 方法使用的数据。
+
 
 ```bash
 curl --silent \
   --cookie-jar <cookie_file> \
   --request POST \
   --url <url>
-  --data-raw <data>
+  --data <data>
 ```
 
 ```bash
@@ -65,5 +76,5 @@ curl --silent \
   --cookie-jar <cookie_file> \
   --request POST \
   --url <url>
-  --data-raw <data>
+  --data <data>
 ```
