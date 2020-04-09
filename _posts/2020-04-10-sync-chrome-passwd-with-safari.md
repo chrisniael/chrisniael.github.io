@@ -24,4 +24,4 @@ Safari 浏览器 → 文件 → 导入自 → Google Chrome.app...
 
 ## Safari 导入其他浏览器密码
 
-Safari 目前还支持 Fiefox 的密码、书签和历史记录，暂时还不支持其他的浏览器。
+Safari 目前还支持 Fiefox 的密码、书签和历史记录的导入，其他浏览器暂时还不支持。
