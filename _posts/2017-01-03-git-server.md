@@ -8,7 +8,6 @@ GitHub 确实好用，不过非付费用户托管在上面的项目只能是 pub
 
 <!--excerpt-->
 
-
 ## Init 远程仓库
 
 Git 服务器简单来说就是一台托管很多 Git 远程仓库的服务器。这里先建立一个远程仓库。
@@ -34,7 +33,6 @@ Git 服务器简单来说就是一台托管很多 Git 远程仓库的服务器�
   ```
 
 这样，一个简易远程仓库就建立好了。
-
 
 ## Clone 远程仓库
 
@@ -62,6 +60,7 @@ Git 支持的数据传输协议有下面这些
   ```shell
   ssh-copy-id -i ~/.ssh/id_rsa.pub git@shenyu.me
   ```
+
   `~/.ssh/id_rsa.pub` 是上一步生成的公钥文件的路径。这里也可以手动将公钥内容追加到到 Git 服务器 `/home/git/.ssh/authorized_keys` 里（使用用户 git ）。 这里生成并上传公钥到 Git 服务器，是为了每次 Pull（Clone）和 Push 的时候，免去输入用户 git 的登陆密码的麻烦。
 
 * 使用 SSH 协议 Clone 刚刚建立的仓库
@@ -93,7 +92,7 @@ Git 支持的数据传输协议有下面这些
 
   内容如下
 
-  ```
+  ```editor-config
   [Unit]
   Description=Git Repositories Server Daemon
   Documentation=man:git-daemon(1)
@@ -120,9 +119,10 @@ Git 支持的数据传输协议有下面这些
     ```shell
     vim /etc/firewalld/services/git-daemon.xml
     ```
+
     内容如下
 
-    ```
+    ```editor-config
     <?xml version="1.0" encoding="utf-8"?>
     <service>
       <short>git-daemon (git)</short>
@@ -139,6 +139,7 @@ Git 支持的数据传输协议有下面这些
     firewall-cmd --permanent --add-service=git-daemon
     firewall-cmd --reload
     ```
+
 * 使用 Git 协议 Clone 刚刚建立的仓库
 
   ```shell
@@ -176,6 +177,7 @@ Git 支持的数据传输协议有下面这些
    ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
    scp .ssh/id_rsa.pub root@shenyu.me/tmp/
   ```
+
    请将 `your_email@example.com` 替换你自己的邮箱地址。
 
 * 切换至 git 用户，初始化 Gitosis
@@ -185,6 +187,7 @@ Git 支持的数据传输协议有下面这些
   gitosis-init < /tmp/id_rsa.pub
   exit
   ```
+
   `/tmp/id_rsa.pub` 是上一步上传到 Git 服务器上的本地电脑的公钥。
 
 * 在本地电脑上 Clone gitosis-admin 仓库
@@ -199,7 +202,7 @@ Git 支持的数据传输协议有下面这些
 
   * 将用户的公钥文件拷贝到 `keydir` 目录下
 
-    ```
+    ```bash
     cp id_rsa.pub gitosis-admin/keydir/shenyu@local.pub
     ```
 
@@ -213,7 +216,7 @@ Git 支持的数据传输协议有下面这些
 
     内容如下
 
-    ```
+    ```editor-config
     [gitosis]
     gitweb = no
     daemon = no
@@ -293,7 +296,7 @@ GitWeb 是 Git 自带一个 CGI 脚本，它提供了一个浏览 Git 仓库信�
 
   内容如下
 
-  ```
+  ```editor-config
   [Unit]
   Description=Simple server for running CGI applications over FastCGI
   After=syslog.target network.target
@@ -326,7 +329,7 @@ GitWeb 是 Git 自带一个 CGI 脚本，它提供了一个浏览 Git 仓库信�
 
     内容如下
 
-    ```
+    ```nginx
     server
     {
         listen      80;
@@ -343,7 +346,6 @@ GitWeb 是 Git 自带一个 CGI 脚本，它提供了一个浏览 Git 仓库信�
     ```
 
     这里绑定了域名 `git.shenyu.me`（请替换成你自己的） 和 `80` 端口。
-
 
   * 加载 Nginx 配置
 
@@ -372,7 +374,7 @@ GitWeb 是 Git 自带一个 CGI 脚本，它提供了一个浏览 Git 仓库信�
 
       内容如下
 
-      ```
+      ```editor-config
       our $projects_list = "/home/git/gitosis/projects.list";
       our $projectroot = "/home/git/repositories";
       our @git_base_url_list = qw(git://shenyu.me ssh://git@shenyu.me);
@@ -395,6 +397,7 @@ htpasswd 可以用来给网站做简单的加密访问功能，这里将它用�
   ```bash
   htpasswd bc /var/www/git/.htpasswd shenyu 123456
   ```
+
   htpasswd 命令最后两个参数是账号和密码。
 
 * 配置 Nginx
@@ -423,8 +426,7 @@ htpasswd 可以用来给网站做简单的加密访问功能，这里将它用�
   nginx -s reload
   ```
 
-现在访问 http://git.shenyu.me 就需要输入账号和密码了。
-
+现在访问 <http://git.shenyu.me> 就需要输入账号和密码了。
 
 ## 参考链接
 

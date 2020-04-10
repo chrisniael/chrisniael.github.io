@@ -4,7 +4,6 @@
 
 我的博客，使用 [Jekyll](https://github.com/jekyll/jekyll) 生成，基于 [minima](https://github.com/jekyll/minima) 主题。
 
-
 ## ruby 开发环境
 
 * ruby >= 2.4
@@ -16,7 +15,7 @@
 
 ## 安装依赖
 
-```
+```bash
 gem install bundler
 bundle install
 # bundle update  # 更新的话

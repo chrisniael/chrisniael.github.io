@@ -35,13 +35,13 @@ Chrome 对这种从第三方网站触发的携带 Cookie 的请求的处理是�
 
     完全禁止从第三方网站触发请求时携带 Cookie，只有当前页面的 URL 与请求目标一致时才会带上 Cookie。
 
-    ```
+    ```http
     Set-Cookie: CookieName=CookieValue; SameSite=Strict;
     ```
 
 * Lax
 
-    ```
+    ```http
     Set-Cookie: CookieName=CookieValue; SameSite=Lax;
     ```
 
@@ -64,8 +64,8 @@ Chrome 对这种从第三方网站触发的携带 Cookie 的请求的处理是�
 * None
 
     完全允许从第三方网站触发请求时携带 Cookie，但是设置 Cookie 的 `SameSite` 值为 `None` 必须同时设置 `Secure` 属性，`Secure` 属性的意思是 Cookie 只能通过 https 发送。
-    
-    ```
+
+    ```http
     Set-Cookie: widget_session=abc123; SameSite=None; Secure
     ```
 

@@ -214,7 +214,7 @@ pacman -S vim
 
 修改 /etc/locale.gen，取消注释下面这两行配置
 
-```
+```editor-config
 # /etc/locale.gen
 
 en_US.UTF-8 UTF-8

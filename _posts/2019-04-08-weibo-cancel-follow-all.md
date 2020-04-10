@@ -12,7 +12,6 @@ date: 2019-04-08 09:35:00 +0800
 2. 然后打开微博的关注列表页，确保当前页面的关注列表都是想要取消关注的，注意别误删
 3. 打开 Chrome 开发者工具（Windows/Linux 快捷键 F12 ，Mac 快捷键 Command + Alt + I），切换到 console 标签页，在 console 中输入下面代码，回车执行
 
-
   ```js
   $("a[action-type=batselect").click();  // 点击“批量管理”按钮
 
