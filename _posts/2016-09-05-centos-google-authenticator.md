@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CentOS 使用 Google Authenticator 登录验证
-date: 2016-09-05 08:45:00 +8
+date: 2016-09-05 08:45:00 +0800
 ---
 
 [Google Authentication 项目](https://github.com/google/google-authenticator) 包含了多个手机平台的一次性验证码生成器的实现，以及一个可插拔的验证认证模块（PAM）。这些实现支持基于 HMAC 的一次性验证码（HOTP）算法（[RFC 4226](https://tools.ietf.org/html/rfc4226)）和基于时间的一次性验证码（TOTP）算法（[RFC 6238](https://tools.ietf.org/html/rfc6238)）。
