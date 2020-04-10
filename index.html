@@ -18,8 +18,8 @@ layout: default
         </h3>
         {%- if site.show_excerpts -%}
           <p>{{ post.excerpt | remove : '<p>' | remove : '</p>' }}</p>
+          <p><a href="{{ post.url | relative_url }}">阅读全文...</a></p>
         {%- endif -%}
-        <p><a href="{{ post.url | relative_url }}">阅读全文...</a></p>
       </li>
       {%- endfor -%}
     </ul>
