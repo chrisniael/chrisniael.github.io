@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 同步 Chrome 密码至 Safari
-date: 2020-04-10 00:05:00 +8
+date: 2020-04-10 00:05:00 +0800
 ---
 
 [Safari 13.1](https://developer.apple.com/documentation/safari_release_notes/safari_13_1_beta_release_notes) 开始支持导入 Chrome 密码的功能。
