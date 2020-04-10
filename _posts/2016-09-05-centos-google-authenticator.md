@@ -14,7 +14,6 @@ date: 2016-09-05 08:45:00 +8
 CentOS Linux release 7.2.1511 (Core)
 ```
 
-
 ## 安装 Google Authenticator PAM module
 
 * 确保 `ntpd` 已安装并正常运行运行
@@ -45,7 +44,6 @@ CentOS Linux release 7.2.1511 (Core)
   ln -s /usr/local/lib/security/pam_google_authenticator.so /usr/lib64/security/
   ```
 
-
 ## 配置 SSH 服务
 
 打开 `/etc/ssh/sshd_config` 文件
@@ -70,7 +68,6 @@ systemctl restart sshd
 ```
 
 这里将 `PubkeyAuthentication` 配置成了 `yes` 表示支持公钥验证登录，即使某个账号启用了 Google Authenticator 验证，只要登录者机器的公钥在这个账号的授权下，就可以不输入密码和 Google Authenticator 的认证码直接登录。
-
 
 ## 配置 PAM
 
@@ -117,7 +114,6 @@ vim /etc/pam.d/sshd
   #...
   auth required pam_google_authenticator.so
   ```
-
 
 ## 启用 Google Authenticator
 
@@ -208,7 +204,6 @@ google-authenticator [<options>]
  -w, --window-size=W      Set window of concurrently valid codes
  -W, --minimal-window     Disable window of concurrently valid codes
 ```
-
 
 ## 设置 Google Authenticator 手机 App
 

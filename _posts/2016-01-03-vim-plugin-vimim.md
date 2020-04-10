@@ -35,7 +35,6 @@ make install
 brew link berkeley-db
 ```
 
-
 ## 安装 Berkeley Db For Python 组件
 
 安装 Berkeley Db 的 Python 组件需要使用 [pip](https://en.wikipedia.org/wiki/Pip_(package_manager))，Mac OS X 默认没有安装 pip，切换到 root 账号，使用 [easy_install](http://peak.telecommunity.com/DevCenter/EasyInstall) 安装 pip
@@ -100,7 +99,6 @@ let g:Vimim_cloud = 'sogou,baidu,qq,google'
   用 Vim 打开一个文本，输入 `/ceshi` 来搜索关键字，然后回车，此时会提示 `Pattern not found`（确保文中没有 `ceshi` 这个 5 个字母的关键字，有的话则匹配不到中文的），然后继续按 `n` ，如果这个文本里有 `测试` 或拼音一样的中文的话，则都会被搜索匹配到，继续按 `n` 来匹配一下一个关键字。
 
   这个功能的缺点就是当上下文中存在搜索拼音的本身时，就会搜索不到拼音对应的中文。
-
 
 ## 参考链接
 
