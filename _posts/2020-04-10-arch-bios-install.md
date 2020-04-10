@@ -2,7 +2,6 @@
 layout: post
 title: Arch Linux (BIOS with MBR) 安装
 date: 2020-04-10 13:45:00 +0800
-excerpt: 基于 BIOS 的系统安装 Arch Linux。
 ---
 
 确认主板系统是 [BIOS](https://zh.wikipedia.org/zh-cn/BIOS)，这里使用 [MBR](https://zh.wikipedia.org/zh-cn/%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95) 分区格式，关于究竟该使用 MBR 还是 GPT 请参考[这里](https://wiki.archlinux.org/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E9%80%89%E6%8B%A9_GPT_%E8%BF%98%E6%98%AF_MBR)。
@@ -11,7 +10,7 @@ excerpt: 基于 BIOS 的系统安装 Arch Linux。
 
 ## 下载 Arch Linux 镜像
 
-https://www.archlinux.org/download/
+<https://www.archlinux.org/download/>
 
 ## 验证镜像完整性
 
@@ -44,7 +43,7 @@ md5 archlinux-2020.04.01-x86_64.iso
 
 ## 验证启动模式
 
-```
+```bash
 ls /sys/firmware/efi/efivars
 ```
 
@@ -52,13 +51,13 @@ ls /sys/firmware/efi/efivars
 
 ## 连接 internet
 
-#### 查看连接
+### 查看连接
 
 ```bash
 ip link
 ```
 
-#### 连接
+### 连接
 
 对于有线网络，安装镜像启动的时候，默认会启动 dhcpcd，如果没有启动，可以手动启动：
 
@@ -66,7 +65,7 @@ ip link
 dhcpcd
 ```
 
-#### 验证连接
+### 验证连接
 
 ```bash
 ping shenyu.me
@@ -74,19 +73,19 @@ ping shenyu.me
 
 ## 更新系统时间
 
-```
+```bash
 timedatectl set-ntp true
 ```
 
 ## 磁盘分区
 
-#### 查看磁盘设备
+### 查看磁盘设备
 
 ```bash
 fdisk -l
 ```
 
-#### 新建分区表
+### 新建分区表
 
 ```bash
 fdisk /dev/sda
@@ -97,7 +96,7 @@ fdisk /dev/sda
 1. 输入 `o`，新建 DOS 分区表
 2. 输入 `w`，保存修改，这个操作会抹掉磁盘所有数据，慎重
 
-#### 分区创建
+### 分区创建
 
 1 sector = 512 bytes  
 
@@ -110,7 +109,7 @@ fdisk /dev/sda
    2. 选择分区类型（p：主分区，e：扩展分区），默认选择 p ，直接 `Enter`
    3. 选择分区区号，直接 `Enter`，使用默认值，fdisk 会自动递增分区号
    4. 分区开始扇区号，直接 `Enter`，使用默认值
-   5. 分区结束扇区号，这里要考虑预留给 swap = 磁盘结束扇区号 - 分配给 swap 分区的空间 (GB) * 1024 * 1024 * 1024 / 512，然后 `Enter`
+   5. 分区结束扇区号，这里要考虑预留给 swap = 磁盘结束扇区号 - 分配给 swap 分区的空间 (GB) *1024 * 1024* 1024 / 512，然后 `Enter`
    6. 输入 `t` 修改刚刚创建的分区类型
    7. 选择分区号，直接 `Enter`， 使用默认值，fdisk 会自动选择刚刚新建的分区
    8. 输入 `83`，使用 Linux 类型
@@ -143,17 +142,17 @@ swapon /dev/sda2
 
 如果格式化失败，可能是磁盘设备存在 Device Mapper
 
-###### 显示 dm 状态
+* 显示 dm 状态
 
-```bash
-dmsetup status
-```
+  ```bash
+  dmsetup status
+  ```
 
-###### 删除 dm
+* 删除 dm
 
-```bash
-dmsetup remove <dev-id>
-```
+  ```bash
+  dmsetup remove <dev-id>
+  ```
 
 ## 挂载文件系统
 
@@ -230,7 +229,7 @@ locale-gen
 
 创建 /etc/locale.conf
 
-```
+```bash
 # /etc/locale.conf
 
 LANG=en_US.UTF-8
@@ -238,18 +237,18 @@ LANG=en_US.UTF-8
 
 ## 网络配置
 
-```
+```bash
 # /etc/hostname
 
 myhostname
 ```
 
-```
+```bash
 # /etc/hosts
 
-127.0.0.1	localhost
-::1				localhost
-127.0.1.1	myhostname.localdomain	myhostname
+127.0.0.1 localhost
+::1    localhost
+127.0.1.1 myhostname.localdomain myhostname
 ```
 
 ```bash
@@ -301,15 +300,13 @@ reboot
 
 ## 启动后需要设置的
 
-#### 设置时区
+### 开启时间自动同步
 
 ```bash
 timedatectl set-ntp true
-# timedatectl set-timezone Asia/Shanghai  # 安装的时候已经配置过了
-# hwclock --systohc  # 安装的时候已经配置过了
 ```
 
-#### 安装配置 openssl
+### 安装配置 openssl
 
 ```bash
 pacman -S openssl
@@ -317,7 +314,7 @@ systemctl start sshd
 systemctl enable sshd
 ```
 
-#### 配置 X11 转发
+### 配置 X11 转发
 
 ```bash
 pacman -S xorg-xauth
@@ -329,19 +326,19 @@ pacman -S xorg-xauth
 X11Forwarding yes
 ```
 
-#### 新建用户
+### 新建用户
 
 ```bash
 useradd -m <username>
 passwd <username>
 ```
 
-#### 一些常用的软件
+### 一些常用的软件
 
 ```bash
 pacman -S zsh git tmux python python-pip xsel wget nodejs npm clang ripgrep \
     man-db man-pages texinfo cmake protobuf hiredis htop gperftools \
-    screenfetch unzip inetutils mariadb-libs zip boost net-tools ruby
+    screenfetch unzip inetutils mariadb-libs zip boost net-tools ruby gdb
 pip install pynvim
 pip install cpplint
 npm install -g neovim bash-language-server
