@@ -4,7 +4,7 @@ title: Arch Linux (BIOS with MBR) 安装
 date: 2020-04-10 13:45:00 +0800
 ---
 
-确认主板系统是 [BIOS](https://zh.wikipedia.org/zh-cn/BIOS)，这里使用 [MBR](https://zh.wikipedia.org/zh-cn/%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95) 分区格式，关于究竟该使用 MBR 还是 GPT 请参考[这里](https://wiki.archlinux.org/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E9%80%89%E6%8B%A9_GPT_%E8%BF%98%E6%98%AF_MBR)。
+确认主板系统是 [BIOS](https://zh.wikipedia.org/zh-cn/BIOS)，这里使用 [MBR](https://zh.wikipedia.org/zh-cn/主引导记录) 分区格式，关于究竟该使用 MBR 还是 GPT 请参考[这里](https://wiki.archlinux.org/index.php/Partitioning_(简体中文)#选择_GPT_还是_MBR))。
 
 <!--excerpt-->
 
@@ -51,25 +51,25 @@ ls /sys/firmware/efi/efivars
 
 ## 连接 internet
 
-### 查看连接
+* 查看连接
 
-```bash
-ip link
-```
+  ```bash
+  ip link
+  ```
 
-### 连接
+* 连接
 
-对于有线网络，安装镜像启动的时候，默认会启动 dhcpcd，如果没有启动，可以手动启动：
+  对于有线网络，安装镜像启动的时候，默认会启动 dhcpcd，如果没有启动，可以手动启动：
 
-```bash
-dhcpcd
-```
+  ```bash
+  dhcpcd
+  ```
 
-### 验证连接
+* 验证连接
 
-```bash
-ping shenyu.me
-```
+  ```bash
+  ping shenyu.me
+  ```
 
 ## 更新系统时间
 
@@ -79,79 +79,77 @@ timedatectl set-ntp true
 
 ## 磁盘分区
 
-### 查看磁盘设备
+* 查看磁盘设备
 
-```bash
-fdisk -l
-```
+  ```bash
+  fdisk -l
+  ```
 
-### 新建分区表
+* 新建分区表
 
-```bash
-fdisk /dev/sda
-```
+  ```bash
+  fdisk /dev/sda
+  ```
 
-下面的操作是在 fdisk 里
+  1. 输入 `o`，新建 DOS 分区表
+  2. 输入 `w`，保存修改，这个操作会抹掉磁盘所有数据，慎重
 
-1. 输入 `o`，新建 DOS 分区表
-2. 输入 `w`，保存修改，这个操作会抹掉磁盘所有数据，慎重
+* 分区创建
 
-### 分区创建
+  1 扇区 = 512 字节
 
-1 sector = 512 bytes  
+  ```bash
+  fdisk /dev/sda
+  ```
 
-```bash
-fdisk /dev/sda
-```
-
-1. 新建 Linux root 分区
-   1. 输入 `n`
-   2. 选择分区类型（p：主分区，e：扩展分区），默认选择 p ，直接 `Enter`
-   3. 选择分区区号，直接 `Enter`，使用默认值，fdisk 会自动递增分区号
-   4. 分区开始扇区号，直接 `Enter`，使用默认值
-   5. 分区结束扇区号，这里要考虑预留给 swap = 磁盘结束扇区号 - 分配给 swap 分区的空间 (GB) *1024 * 1024* 1024 / 512，然后 `Enter`
-   6. 输入 `t` 修改刚刚创建的分区类型
-   7. 选择分区号，直接 `Enter`， 使用默认值，fdisk 会自动选择刚刚新建的分区
-   8. 输入 `83`，使用 Linux 类型
-2. 新建 Linux swap 分区
-   1. 输入 `n`
-   2. 选择分区类型（p：主分区，e：扩展分区），默认选择 p ，直接 `Enter`
-   3. 选择分区区号，直接 `Enter`，使用默认值，fdisk 会自动递增分区号
-   4. 分区开始扇区号，直接 `Enter`，使用默认值
-   5. 分区结束扇区号，直接 `Enter`，使用默认值
-   6. 输入 `t` 修改刚刚创建的分区类型
-   7. 选择分区号，直接 `Enter`， 使用默认值，fdisk 会自动选择刚刚新建的分区
-   8. 输入 `82`，使用 Linux swap 类型
-3. 保存新建的分区
-   1. 输入 `w`
+  1. 新建 Linux root 分区
+     1. 输入 `n`
+     2. 选择分区类型（p：主分区，e：扩展分区），默认选择 p ，直接 `Enter`
+     3. 选择分区区号，直接 `Enter`，使用默认值，fdisk 会自动递增分区号
+     4. 分区开始扇区号，直接 `Enter`，使用默认值
+     5. 分区结束扇区号，这里要考虑预留给 swap 分区空间，计算公式：root 分区结束扇区号 = 磁盘结束扇区号 - 分配给 swap 分区的空间 (GB) \* 1024 \* 1024 \* 1024 / 512，输入后 `Enter`
+     6. 输入 `t` 修改刚刚创建的分区类型
+     7. 选择分区号，直接 `Enter`， 使用默认值，fdisk 会自动选择刚刚新建的分区
+     8. 输入 `83`，使用 Linux 类型
+  2. 新建 Linux swap 分区
+     1. 输入 `n`
+     2. 选择分区类型（p：主分区，e：扩展分区），默认选择 p ，直接 `Enter`
+     3. 选择分区区号，直接 `Enter`，使用默认值，fdisk 会自动递增分区号
+     4. 分区开始扇区号，直接 `Enter`，使用默认值
+     5. 分区结束扇区号，直接 `Enter`，使用默认值
+     6. 输入 `t` 修改刚刚创建的分区类型
+     7. 选择分区号，直接 `Enter`， 使用默认值，fdisk 会自动选择刚刚新建的分区
+     8. 输入 `82`，使用 Linux swap 类型
+  3. 保存新建的分区
+     1. 输入 `w`
 
 ## 磁盘格式化
 
-格式化 Linux root 分区
-
-```bash
-mkfs.ext4 /dev/sda1
-```
-
-格式化 Linux swap 分区
-
-```bash
-mkswap /dev/sda2
-swapon /dev/sda2
-```
-
-如果格式化失败，可能是磁盘设备存在 Device Mapper
-
-* 显示 dm 状态
+* 格式化 Linux root 分区
 
   ```bash
-  dmsetup status
+  mkfs.ext4 /dev/sda1
   ```
 
-* 删除 dm
+  如果格式化失败，可能是磁盘设备存在 Device Mapper
+
+  * 显示 dm 状态
+
+    ```bash
+    dmsetup status
+    ```
+
+  * 删除 dm
+
+    ```bash
+    dmsetup remove <dev-id>
+    ```
+
+* 格式化 Linux swap 分区
 
   ```bash
-  dmsetup remove <dev-id>
+  mkswap /dev/sda2
+  swapon /dev/sda2
   ```
 
 ## 挂载文件系统
@@ -208,53 +206,53 @@ hwclock --systohc
 
 ## 本地化
 
-```bash
-pacman -S vim
-```
+* 安装编辑器 vim，修改配置要使用
 
-修改 /etc/locale.gen，取消注释下面这两行配置
+  ```bash
+  pacman -S vim
+  ```
 
-```editor-config
-# /etc/locale.gen
+* 修改 /etc/locale.gen，取消注释下面这两行配置
 
-en_US.UTF-8 UTF-8
-zh_CN.UTF-8 UTF-8
-```
+  ```text
+  en_US.UTF-8 UTF-8
+  zh_CN.UTF-8 UTF-8
+  ```
 
-生成 locale 信息
+* 生成 locale 信息
 
-```bash
-locale-gen
-```
+  ```bash
+  locale-gen
+  ```
 
-创建 /etc/locale.conf
+* 创建 /etc/locale.conf
 
-```bash
-# /etc/locale.conf
-
-LANG=en_US.UTF-8
-```
+  ```bash
+  LANG=en_US.UTF-8
+  ```
 
 ## 网络配置
 
-```bash
-# /etc/hostname
+* 修改 hostname，编辑 /etc/hostname
 
-myhostname
-```
+  ```text
+  myhostname
+  ```
 
-```bash
-# /etc/hosts
+* 配置 hosts，编辑 /etc/hosts
 
-127.0.0.1 localhost
-::1    localhost
-127.0.1.1 myhostname.localdomain myhostname
-```
+  ```text
+  127.0.0.1 localhost
+  ::1    localhost
+  127.0.1.1 myhostname.localdomain myhostname
+  ```
 
-```bash
-pacman -S dhcpcd
-systemctl enable dhcpcd
-```
+* 启动 dhcpcd 服务
+
+  ```bash
+  pacman -S dhcpcd
+  systemctl enable dhcpcd
+  ```
 
 ## 修改 root 密码
 
@@ -272,9 +270,9 @@ passwd
 
 * Intel CPU
 
-    ```bash
-    pacman -S intel-ucode
-    ```
+  ```bash
+  pacman -S intel-ucode
+  ```
 
 ## 安装 GRUB
 
@@ -300,46 +298,46 @@ reboot
 
 ## 启动后需要设置的
 
-### 开启时间自动同步
+* 开启时间自动同步
 
-```bash
-timedatectl set-ntp true
-```
+  ```bash
+  timedatectl set-ntp true
+  ```
 
-### 安装配置 openssl
+* 安装配置 openssl
 
-```bash
-pacman -S openssl
-systemctl start sshd
-systemctl enable sshd
-```
+  ```bash
+  pacman -S openssl
+  systemctl start sshd
+  systemctl enable sshd
+  ```
 
-### 配置 X11 转发
+* 配置 X11 转发
 
-```bash
-pacman -S xorg-xauth
-```
+  ```bash
+  pacman -S xorg-xauth
+  ```
 
-```conf
-# /etc/ssh/sshd_config
+  ```conf
+  # /etc/ssh/sshd_config
 
-X11Forwarding yes
-```
+  X11Forwarding yes
+  ```
 
-### 新建用户
+* 新建用户
 
-```bash
-useradd -m <username>
-passwd <username>
-```
+  ```bash
+  useradd -m <username>
+  passwd <username>
+  ```
 
-### 一些常用的软件
+* 一些常用的软件
 
-```bash
-pacman -S zsh git tmux python python-pip xsel wget nodejs npm clang ripgrep \
-    man-db man-pages texinfo cmake protobuf hiredis htop gperftools \
-    screenfetch unzip inetutils mariadb-libs zip boost net-tools ruby gdb
-pip install pynvim
-pip install cpplint
-npm install -g neovim bash-language-server
-```
+  ```bash
+  pacman -S zsh git tmux python python-pip xsel wget nodejs npm clang ripgrep \
+      man-db man-pages texinfo cmake protobuf hiredis htop gperftools \
+      screenfetch unzip inetutils mariadb-libs zip boost net-tools ruby gdb
+  pip install pynvim
+  pip install cpplint
+  npm install -g neovim bash-language-server
+  ```
