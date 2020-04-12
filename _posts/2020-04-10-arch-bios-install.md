@@ -47,7 +47,7 @@ md5 archlinux-2020.04.01-x86_64.iso
 ls /sys/firmware/efi/efivars
 ```
 
-如果 /sys/firmware/efi/efivars 目录存在，那么系统应该是基于 UEFI 启动的，在主板设置里关闭 UEFI 模式，或者参考 *Arch Linux (UEFI with GPT) 安装*。
+如果 /sys/firmware/efi/efivars 目录存在，那么系统应该是基于 UEFI 启动的，在主板设置里禁用 UEFI 模式启动。
 
 ## 连接 internet
 
