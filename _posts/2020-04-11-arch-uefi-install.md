@@ -47,7 +47,7 @@ md5 archlinux-2020.04.01-x86_64.iso
 ls /sys/firmware/efi/efivars
 ```
 
-如果 /sys/firmware/efi/efivars 目录不存在，则系统可能是从 BIOS 模式启动的。参考 *Arch Linux (UEFI with GPT) 安装*。
+如果 /sys/firmware/efi/efivars 目录不存在，则系统可能是从 BIOS 模式启动的，在主板设置里使用 UEFI 模式启动。
 
 ## 连接 internet
 
