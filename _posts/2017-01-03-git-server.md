@@ -92,7 +92,7 @@ Git 支持的数据传输协议有下面这些
 
   内容如下
 
-  ```editor-config
+  ```text
   [Unit]
   Description=Git Repositories Server Daemon
   Documentation=man:git-daemon(1)
@@ -122,7 +122,7 @@ Git 支持的数据传输协议有下面这些
 
     内容如下
 
-    ```editor-config
+    ```xml
     <?xml version="1.0" encoding="utf-8"?>
     <service>
       <short>git-daemon (git)</short>
@@ -216,7 +216,7 @@ Git 支持的数据传输协议有下面这些
 
     内容如下
 
-    ```editor-config
+    ```text
     [gitosis]
     gitweb = no
     daemon = no
@@ -296,7 +296,7 @@ GitWeb 是 Git 自带一个 CGI 脚本，它提供了一个浏览 Git 仓库信�
 
   内容如下
 
-  ```editor-config
+  ```text
   [Unit]
   Description=Simple server for running CGI applications over FastCGI
   After=syslog.target network.target
@@ -374,7 +374,7 @@ GitWeb 是 Git 自带一个 CGI 脚本，它提供了一个浏览 Git 仓库信�
 
       内容如下
 
-      ```editor-config
+      ```text
       our $projects_list = "/home/git/gitosis/projects.list";
       our $projectroot = "/home/git/repositories";
       our @git_base_url_list = qw(git://shenyu.me ssh://git@shenyu.me);
