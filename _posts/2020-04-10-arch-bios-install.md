@@ -4,7 +4,7 @@ title: Arch Linux (BIOS with MBR) 安装
 date: 2020-04-10 13:45:00 +0800
 ---
 
-确认主板系统是 [BIOS](https://zh.wikipedia.org/zh-cn/BIOS)，这里使用 [MBR](https://zh.wikipedia.org/zh-cn/主引导记录) 分区格式，关于究竟该使用 MBR 还是 GPT 请参考[这里](https://wiki.archlinux.org/index.php/Partitioning_(简体中文)#选择_GPT_还是_MBR))。
+确认主板系统是 [BIOS](https://zh.wikipedia.org/zh-cn/BIOS)，这里使用 [MBR](https://zh.wikipedia.org/zh-cn/主引导记录) 分区格式，关于究竟该使用 MBR 还是 GPT 请参考[这里](https://wiki.archlinux.org/index.php/Partitioning_(简体中文)#选择_GPT_还是_MBR)。
 
 <!--excerpt-->
 
