@@ -49,3 +49,5 @@ function brew-cask-upgrade() {
 ```
 
 将这个自定义函数 `brew-cask-upgrade` 添加到 `~/.zshrc` 里，然后每次打算更新 App 的时候，直接执行  `brew-cask-upgrade` 就能将所有有版本更新的 App 更新好（**包括标记为** `auto_updates` **的**）。
+
+关于 brew cask 命令相关的更多信息，可以通过 `man brew cask` 查看。
