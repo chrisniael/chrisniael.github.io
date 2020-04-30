@@ -61,7 +61,7 @@ Amazon 购买的电子书自然能在云端存储书签，还有就是通过能�
 | mobi old/both | 邮件        | v        | v        | x              | x                | v            | v (html)     |
 | pdf           | 邮件        | v        | x        | x              | x                | x            | x            |
 | epub          | USB         | x        | x        | x              | x                | x            | x            |
-| azw3          | USB         | v        | v        | v              | o                | x            | x            |
+| azw3          | USB         | v        | v        | v              | o                | x            | v (html)     |
 | mobi new      | USB         | v        | v        | v              | o                | x            | x            |
 | mobi old/both | USB         | v        | x        | x              | o                | x            | x            |
 | pdf           | USB         | v        | x        | x              | o                | x            | x            |
