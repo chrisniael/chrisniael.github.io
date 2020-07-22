@@ -17,6 +17,6 @@ Mac 上最优雅的剪切板管理工具莫过于 Paste，从 2.6.0 版本开始
 * IOS：免费
 * Mac：免费
 
-之前是一次性付费购买的老用户可以从 Paste 官网下载到 2.5.8 版本继续使用。
+之前一次性付费购买的老用户可以从 Paste 官网下载到 2.5.8 版本继续使用。
 
 [https://pasteapp.io/legacy/download/](https://pasteapp.io/legacy/download/)
