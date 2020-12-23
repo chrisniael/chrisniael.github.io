@@ -12,8 +12,11 @@
 docker pull jekyll/jekyll:3.8.6
 docker run \
   --volume="$PWD:/srv/jekyll" \
-  -it -p 4000:4000 jekyll/jekyll:3.8.6 \
-  jekyll serve --watch
+  --name jekyll-server \
+  -it \
+  -p 4000:4000 \
+  jekyll/jekyll:3.8.6 \
+  jekyll serve --watch --incremental
 ```
 
 然后浏览器打开 <http://127.0.0.1:4000>
