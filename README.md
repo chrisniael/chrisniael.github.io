@@ -4,25 +4,27 @@
 
 我的博客，使用 [Jekyll](https://github.com/jekyll/jekyll) 生成，基于 [minima](https://github.com/jekyll/minima) 主题。
 
-## ruby 开发环境
+## 预览网站
 
-* ruby >= 2.4
-* gem
-* gcc & g++
-* make
-
-暂时别使用最新的 ruby 2.7，构建的时候会报语法错误。
-
-## 安装依赖
+确保已经安装 docker。
 
 ```bash
-gem install bundler
-bundle install
-# bundle update  # 更新的话
+docker pull jekyll/jekyll:3.8.6
+docker run \
+  --volume="$PWD:/srv/jekyll" \
+  -it -p 4000:4000 jekyll/jekyll:3.8.6 \
+  jekyll serve --watch
 ```
 
-## 生成网站
+然后浏览器打开 <http://127.0.0.1:4000>
+
+## 生成静态网站
 
 ```bash
-bundle exec jekyll build
+docker pull jekyll/jekyll:3.8.6
+docker run \
+  --volume="$PWD:/srv/jekyll" \
+  -it -p 4000:4000 jekyll/jekyll:3.8.6 \
+  jekyll build
+
 ```
