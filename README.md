@@ -8,7 +8,7 @@
 
 确保已经安装 docker。
 
-```bash
+```sh
 docker pull jekyll/jekyll:3.8.6
 docker run \
   --volume="$PWD:/srv/jekyll" \
@@ -23,7 +23,7 @@ docker run \
 
 ## 生成静态网站
 
-```bash
+```sh
 docker pull jekyll/jekyll:3.8.6
 docker run \
   --volume="$PWD:/srv/jekyll" \
