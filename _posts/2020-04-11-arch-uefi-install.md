@@ -299,10 +299,10 @@ reboot
   hwclock --systohc
   ```
 
-- 安装配置 openssl
+- 安装配置 openssh
 
   ```bash
-  pacman -S openssl
+  pacman -S openssh
   systemctl start sshd
   systemctl enable sshd
   ```
