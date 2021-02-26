@@ -162,6 +162,8 @@ reboot
 
 openwrt 默认 LAN2（eth1） 为 wan 口，LAN1（eth0） 位 lan 口。
 
+{% asset 2021-02-26-x86-64-install-openwrt-link-illustrate.png alt=openwrt-link-illustrate %}
+
 - 将 LAN2 口插入能自动分配 IP 且能上网的网线。
 - 将 LAN1 口与电脑通过网线连接
 - 在浏览器输入 192.168.1.1 访问 luci 管理后台
