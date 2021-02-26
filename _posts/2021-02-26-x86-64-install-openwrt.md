@@ -77,10 +77,9 @@ dd if=openwrt-19.07.7-x86-64-combined-ext4.img of=/dev/sda
 
 ## OpenWRT 系统空间扩容
 
-使用 lsblk 查看目前磁盘划分情况。
+通过 `lsblk` 命令查看目前磁盘划分情况。
 
 ```bash
-root@0:~# lsblk
 NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
 loop0 7:0 0 342.6M 1 loop /usr/lib/live/mount/rootfs/filesystem.squashfs
 sda 8:0 0 14.9G 0 disk
@@ -197,7 +196,7 @@ openwrt 默认 LAN2（eth1） 为 wan 口，LAN1（eth0） 位 lan 口。
 
 ### 更换 WAN 口位置
 
-openwrt 默认 LAN2（eth1） 为 WAN 口，LAN1（eth0）为 LAN 口，其余物理 LAN 接口暂未设置。
+openwrt 默认 LAN2（eth1） 为 WAN 口，LAN1（eth0）为 LAN 口，将 WAN 口更改为 LAN1（eth0）。
 
 设备名与 LAN 物理接口名的对应关系：
 
@@ -216,7 +215,11 @@ openwrt 默认 LAN2（eth1） 为 WAN 口，LAN1（eth0）为 LAN 口，其余�
   - 保存
 - 保存并应用
 
+{% asset 2021-02-26-x86-64-install-openwrt-exchange-wan-illustrate.png alt=openwrt-exchange-wan-illustrate %}
+
 ### 桥接所有 LAN 口
+
+openwrt 默认只设置了 LAN2（eth1）和 LAN1（eth0）接口，其余物理 LAN 口暂未设置，桥接 LAN2（eth1）与剩余所有 LAN 口。
 
 - 网络 - 接口 - LAN - 编辑 - 物理设置
 - 接口：将除了 eth0 (wan) 以外所有适配器都选择上。
