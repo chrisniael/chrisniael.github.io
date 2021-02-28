@@ -44,7 +44,7 @@ iface enp5s0 inet manual
 
 网络设备名每台机器可能会略有不同，忽略，修改 `address`, `netmask` 和 `gateway` 字段对应的值为新环境的网络地址。
 
-## 修改终端提示地址
+## 修改终端提示的 URL
 
 编辑 `/etc/issue`。
 
