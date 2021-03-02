@@ -59,7 +59,7 @@ configure this server - connect to:
 ------------------------------------------------------------------------------
 ```
 
-`/etc/issue` 的内容是 Linux 终端登启动后的欢迎语句。将 URL 中的 IP 地址更改 PVE 新的 IP，之后就可以通过这个 URL 访问 PVE 管理后台。
+`/etc/issue` 的内容是 Linux 终端登启动后的欢迎语句。将 URL 中的 IP 地址更改 PVE 新的 IP。
 
 ## 修改 hosts
 
