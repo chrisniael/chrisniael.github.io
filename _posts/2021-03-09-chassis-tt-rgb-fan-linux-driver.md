@@ -4,9 +4,7 @@ title: TT 散热风扇 Linux 驱动
 date: 2021-03-09 22:07:00 +0800
 ---
 
-驱动链接：[https://github.com/chestm007/linux_thermaltake_riing](https://github.com/chestm007/linux_thermaltake_riing)
-
-下面是我探索的过程记录，用的操作系统是基于 Arch 的 Manjaro，散热的硬件有：
+下面的内容基于 Manjaro 操作系统，待驱动的硬件有：
 
 - TT Level 20 GT RGB 机箱自带的 2 个 20cm 的 Riing Plus RGB 风扇和 1 个 14cm 的 Riing Plus RGB 风扇，带 1 个 TT 风扇控制盒（软件版本）
 - Floe Riing RGB 360 的 RGB 水泵 和冷排上的 3 个 12cm 的 Riing Plus RGB 风扇，带 1 个 TT 风扇控制盒（软件版本）
@@ -17,7 +15,9 @@ date: 2021-03-09 22:07:00 +0800
 
 这里要注意的是机箱的 3 个散热风扇都没有接在主板的 **CHA_FAN** 接口上，这样 BIOS 里针对 **CHA_FAN** 接口提供的风扇转速调整策略就不能用了。CPU 的散热器还是连接了主板的 **CPU_FAN** 接口了，从 BIOS 里能看到 CPU 的温度和散热风扇的转速情况。
 
-所有风扇都连接了对应的控制器，这里有 2 个控制器，分别控制机箱的风扇和 CPU 的风扇，控制器通过 1 根 Micro USB 线连接至主板的 USB 2.0 接口上（用来通讯）。官方提供了跑在 Windows 上的 [TT RGB Plus](https://ttrgbplus.thermaltake.com/cn/) 来控制控制器上连接的风扇的转速和灯光，Linux 则可以用上面提到的这个开源的驱动。
+所有风扇都连接了对应的控制器，这里有 2 个控制器，分别控制机箱的风扇和 CPU 的风扇，控制器通过 1 根 Micro USB 线连接至主板的 USB 2.0 接口上（用来通讯）。官方提供了跑在 Windows 上的 [TT RGB Plus](https://ttrgbplus.thermaltake.com/cn/) 来控制控制器上连接的风扇的转速和灯光，Linux 则可以用下面这个链接的这个开源的驱动。
+
+<https://github.com/chestm007/linux_thermaltake_riing>
 
 ## 安装 yay
 
