@@ -4,7 +4,7 @@ title: TT 散热风扇 Linux 驱动
 date: 2021-03-09 22:07:00 +0800
 ---
 
-直接上链接：<https://github.com/chestm007/linux_thermaltake_riing>
+驱动链接：[https://github.com/chestm007/linux_thermaltake_riing](https://github.com/chestm007/linux_thermaltake_riing)
 
 下面是我探索的过程记录，用的操作系统是基于 Arch 的 Manjaro，散热的硬件有：
 
@@ -165,4 +165,4 @@ sudo systemctl enable linux-thermaltake-rgb.service  # 开机自动启动（可�
 
 ## 缺点
 
-关机后，再按电源键开机，从启动到 Linux 系统加载完成这段时间，风扇会变成没有加载驱动的状态，默认转速运转，RGB 灯光五颜六色，系统启动起来后就恢复成配置的模式工作了，保持开机状态，重启机器，重启过程风扇不会恢复成初始状态工作。
+关机后，再按电源键开机，从启动到 Linux 系统加载完成这段时间，风扇会变成没有加载驱动的状态，以默认转速运转，RGB 灯光五颜六色，系统启动起来后就恢复成配置的模式工作了。重启机器，重启过程风扇不会恢复成初始状态工作。
