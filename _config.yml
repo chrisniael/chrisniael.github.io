@@ -18,11 +18,18 @@ author: 沈煜
 title: 沈煜的博客
 email: shenyu@shenyu.me
 description: >- # this means to ignore newlines until "baseurl:"
-  Less is more.
+  沈煜的博客
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://shenyu.me" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  chrisniael
+github_username: chrisniael
 icp: 苏ICP备16021330号
+
+# jekyll-seo-tag 配置
+google_site_verification: JPOVQK_Yfsgx-Sk7EUPSh-yHk18YyJvPpImI3H287CY
+social:
+  name: 沈煜
+  links:
+    - https://github.com/chrisniael
 
 # Build settings
 markdown: kramdown
@@ -59,7 +66,6 @@ assets:
 
 paginate: 10
 paginate_path: "/page:num/"
-
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
