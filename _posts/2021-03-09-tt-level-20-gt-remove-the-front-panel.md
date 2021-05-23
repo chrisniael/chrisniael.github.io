@@ -4,9 +4,9 @@ title: TT Level 20 GT RGB 拆卸前面板
 date: 2021-03-09 20:54:00 +0800
 ---
 
-19 年年底入的 [TT Level 20 GT RGB](https://item.jd.com/100000347018.html)，一直没能把前面板拆卸下来，1 年多使用下来前面板积累的灰尘已经基本把风扇的 RGB 灯效都盖住了，不得不想办法拆卸前面板清理一下。
+19 年年底入的 [TT Level 20 GT RGB](https://item.jd.com/100000347018.html)，一直没能把前面板拆卸下来，前面板积累的灰尘把风扇的 RGB 灯效都盖住。
 
-翻了一下官方的[说明书](https://www.thermaltake.com/level-20-gt-rgb-plus.html#productattach)，没有找到任何指导用户拆卸前面板的文字和图片。最后在 B 站的一个[开箱视频](https://www.bilibili.com/video/BV12W411S7XV?from=search&seid=14812538657333488148?t=20m40s)中找到了一丝线索。
+翻了一下官方的[说明书](https://www.thermaltake.com/level-20-gt-rgb-plus.html#productattach)，没有找到任何指导用户拆卸前面板的文字和图片。最后在 B 站的一个[开箱视频](https://www.bilibili.com/video/BV12W411S7XV?from=search&seid=14812538657333488148?t=20m40s)中找到了一点线索。
 
 {% asset 2021-03-09-tt-level-20-gt-remove-the-front-panel alt=tt-level-50-gt-remove-the-front-panel %}
 
