@@ -55,10 +55,9 @@ fan_manager:
   points:
     - [0, 0] # [temp(*C), speed(0-100%)]
     - [40, 0]
-    - [41, 35]
-    - [60, 35]
-    - [65, 45]
-    - [90, 100]
+    - [60, 30]
+    - [70, 50]
+    - [90, 80]
   sensor_name: k10temp
 lighting_manager:
   model: full
@@ -161,6 +160,23 @@ sudo systemctl enable linux-thermaltake-rgb.service  # 开机自动启动（可�
 
   ```bash
   sudo pip install gobject
+  ```
+
+- load() missing 1 required positional argument: 'Loader'
+
+  yaml 最新版本[不兼容](https://github.com/chestm007/linux_thermaltake_riing/pull/53/files)导致的，改一下源码，兼容最新版本的 yaml。
+
+  ```diff
+  /usr/lib/python3.10/site-packages/linux_thermaltake_rgb/daemon/config.py
+   @@ -58,7 +58,7 @@ def load_config(self):
+
+         cfg = ''.join(cfg_lines)
+         LOGGER.debug('raw config file\n** start **\n\n%s\n** end **\n', cfg)
+  -      return yaml.load(cfg)
+  +      return yaml.load(cfg, Loader=yaml.FullLoader)
+
+     def parse_config(self, config):
+             self.controllers = config.get('controllers')
   ```
 
 ## 缺点

@@ -244,7 +244,7 @@ hwclock --systohc
   ```text
   127.0.0.1 localhost
   ::1    localhost
-  127.0.1.1 myhostname.localdomain myhostname
+  127.0.0.1 myhostname.localdomain myhostname
   ```
 
 - 启动 dhcpcd 服务
@@ -331,13 +331,11 @@ reboot
   passwd <username>
   ```
 
-- 一些常用的软件
+- 安装 Yay
 
   ```bash
-  pacman -S zsh git tmux python python-pip xsel wget nodejs npm clang ripgrep \
-      man-db man-pages texinfo cmake protobuf hiredis htop gperftools \
-      screenfetch unzip inetutils mariadb-libs zip boost net-tools ruby gdb
-  pip install pynvim
-  pip install cpplint
-  npm install -g neovim bash-language-server
+  pacman -S --needed git base-devel
+  git clone https://aur.archlinux.org/yay.git
+  cd yay
+  makepkg -si
   ```
