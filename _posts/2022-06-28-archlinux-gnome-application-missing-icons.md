@@ -14,6 +14,6 @@ sudo gtk-update-icon-cache -t -f /usr/share/icons/hicolor
 
 执行后重启就好了。
 
-<http://wb-hk.blogspot.com/2016/09/archlinux-annoying-missing-icons.html>
+参考： <http://wb-hk.blogspot.com/2016/09/archlinux-annoying-missing-icons.html>
 
 
