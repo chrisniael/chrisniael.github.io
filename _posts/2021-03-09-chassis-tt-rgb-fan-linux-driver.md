@@ -4,14 +4,12 @@ title: Linux 控制 TT 风扇转速与 RGB 灯效
 date: 2021-03-09 22:07:00 +0800
 ---
 
-Manjaro 操作系统。
-
-待驱动的硬件：
+Arch 操作系统，TT 散热设备：
 
 - TT Level 20 GT RGB 机箱自带的 2 个 20cm 的 Riing Plus RGB 风扇和 1 个 14cm 的 Riing Plus RGB 风扇，带 1 个 TT 风扇控制盒（软件版本）
 - Floe Riing RGB 360 的 RGB 水泵 和冷排上的 3 个 12cm 的 Riing Plus RGB 风扇，带 1 个 TT 风扇控制盒（软件版本）
 
-硬件的连接方式：
+连接方式：
 
 {% asset 2021-03-09-chassis-tt-rgb-fan-linux-driver-device-link-ilustration alt=device-link-illustration %}
 
@@ -22,7 +20,10 @@ Manjaro 操作系统。
 ## 安装 yay
 
 ```bash
-sudo pacman -S yay
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
 ```
 
 ## 安装 linux-thermaltake-rgb
@@ -136,7 +137,7 @@ lighting_manager:
 
 ```bash
 sudo systemctl start linux-thermaltake-rgb.service
-sudo systemctl enable linux-thermaltake-rgb.service  # 开机自动启动（可选）
+sudo systemctl enable linux-thermaltake-rgb.service  # 开机自动启动
 ```
 
 ## 可能会遇到的问题
