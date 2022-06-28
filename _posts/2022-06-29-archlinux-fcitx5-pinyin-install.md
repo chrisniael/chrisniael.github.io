@@ -80,4 +80,5 @@ GLFW_IM_MODULE=ibus
 
 ## 参考
 
-<https://wiki.archlinux.org/title/Fcitx5_(简体中文)>
+- <https://wiki.archlinux.org/title/Fcitx5_(简体中文)>
+- <https://askubuntu.com/a/144971>
