@@ -24,7 +24,7 @@ pacman -S fcitx5-chinese-addons
 
 ## 配置
 
-#### 环境变量
+### 环境变量
 
 /etc/environment
 
@@ -39,7 +39,7 @@ GLFW_IM_MODULE=ibus
 
 配置完后重启生效。
 
-#### Fcitx 5 配置
+### Fcitx 5 配置
 
 - 增加拼音输入法
 
