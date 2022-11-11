@@ -93,7 +93,7 @@ GLFW_IM_MODULE=ibus
   Exec=env GTK_IM_MODULE=xim putty %u
   ```
 
-  注销重新登陆生效。
+  重新打开 putty 生效。
 
 ## 参考
 
