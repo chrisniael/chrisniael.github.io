@@ -4,7 +4,7 @@ title: Arch Linux (GNOME 桌面) JetBrains Toolbox 托盘图标不显示
 date: 2022-11-28 00:27:00 +0800
 ---
 
-安装 GNOME 扩展 [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/) 可以解决 GNOME 桌面应用不显示托盘的问题。
+安装 GNOME 扩展 [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/)
 
 ```bash
 sudo pacman -S gnome-shell-extension-appindicator
