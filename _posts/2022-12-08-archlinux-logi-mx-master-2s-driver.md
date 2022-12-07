@@ -1,0 +1,67 @@
+---
+layout: post
+title: Arch Linux Logi MX Master 2s 驱动
+date: 2022-12-08 01:03:00 +0800
+---
+
+## 安装 logiops
+
+<https://github.com/PixlOne/logiops>
+
+```shell
+yay -S logiops-git
+```
+
+## 配置
+
+/etc/logid.cfg
+
+```cfg
+devices: ({
+  name: "Wireless Mouse MX Master 2S";
+
+  // A lower threshold number makes the wheel switch to free-spin mode
+  // quicker when scrolling fast.
+  smartshift: { on: true; threshold: 20; };
+
+  hiresscroll:
+  {
+      hires: true;
+      invert: false;
+      target: true;
+      up: {
+          mode: "Axis";
+          axis: "REL_WHEEL_HI_RES";
+          axis_multiplier: 2;
+      },
+      down: {
+          mode: "Axis";
+          axis: "REL_WHEEL_HI_RES";
+          axis_multiplier: -2;
+      },
+  };
+
+  // Higher numbers make the mouse more sensitive (cursor moves faster),
+  // 4000 max for MX Master 3.
+  dpi: 800;
+
+  buttons: (
+
+    // Make thumb button 10.
+    // { cid: 0x53; action = { type: "Keypress"; keys: ["KEY_BACK"];    }; },
+
+    // Make top button 11.
+    // { cid: 0x56; action = { type: "Keypress"; keys: ["KEY_FORWARD"]; }; },
+
+    // Make top button gesture.
+    { cid: 0xc3; action = { type: "Keypress"; keys: ["KEY_LEFTMETA"]; }; }
+  );
+});
+```
+
+## 启动
+
+```shell
+sudo systemctl start logid.service
+sudo systemctl enable logid.service
+```
