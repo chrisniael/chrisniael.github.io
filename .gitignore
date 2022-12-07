@@ -4,3 +4,4 @@ _site
 .jekyll-cache
 *.swp
 Gemfile.lock
+.idea
