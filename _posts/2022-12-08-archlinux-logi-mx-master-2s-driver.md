@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Arch Linux Logi MX Master 2s 驱动
+title: Arch Linux 罗技 MX Master 2s 鼠标驱动
 date: 2022-12-08 01:03:00 +0800
 ---
 
