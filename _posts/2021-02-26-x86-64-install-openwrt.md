@@ -25,6 +25,10 @@ OpenWRT 的安装过程本质上来说就是将 OpenWRT 系统镜像写入软路
   - [Etcher](https://www.balena.io/etcher/)
 - Linux
   - dd
+  
+    ```bash
+    dd if=finnix-124.iso of=/dev/sdX
+    ```
 
 ## 安装 OpenWRT
 
@@ -72,7 +76,7 @@ zram0 253:0 0 1.9G 0 disk [SWAP]
 将 OpenWRT 系统镜像写入 `sda` 标识的硬盘里。
 
 ```bash
-dd if=openwrt-19.07.7-x86-64-combined-ext4.img of=/dev/sda
+dd if=openwrt-19.07.7-x86-64-combined-ext4.img bs=1M of=/dev/sda
 ```
 
 ## OpenWRT 系统空间扩容
@@ -143,13 +147,15 @@ Calling ioctl() to re-read partition table.
 Syncing disks.
 ```
 
+这里注意删除分区 2 后，新建分区的 First sector 不能用 **默认值** (34816)，得输入删除前的 First sector 值 (**33792**)。
+
 增大 sda2 文件系统大小。
 
 ```bash
 resize2fs /dev/sda2
 ```
 
-最后重启就完成了 OpenWRT 的安装工作。
+最后重启，OpenWRT 就安装完成了。
 
 ```bash
 reboot
