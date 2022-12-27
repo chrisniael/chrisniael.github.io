@@ -4,7 +4,8 @@ title: x86-64 设备安装配置 OpenWRT
 date: 2021-02-26 01:14:00 +0800
 ---
 
-OpenWRT 的安装过程本质上来说就是将 OpenWRT 系统镜像写入软路由的硬盘里。这里使用 Finnix 系统来将 OpenWRT 安装进 X86-64 的设备中，要使用到的一些设备：
+OpenWRT 的安装过程本质上来说就是将 OpenWRT 系统镜像写入软路由的硬盘里。这里使用 Finnix 系统来将 OpenWRT 安装进 X86-64
+的设备中，要使用到的一些设备：
 
 - 安装了 Finnix 系统的 U 盘 1 个。
 - 网线 2 根。
@@ -20,19 +21,20 @@ OpenWRT 的安装过程本质上来说就是将 OpenWRT 系统镜像写入软路
 从 <https://www.finnix.org> 下载最新的 Finnix 系统镜像，然后将其写入 U 盘。
 
 - Windows
-  - [Rufus](https://rufus.ie)
+    - [Rufus](https://rufus.ie)
 - Mac
-  - [Etcher](https://www.balena.io/etcher/)
+    - [Etcher](https://www.balena.io/etcher/)
 - Linux
-  - dd
-  
-    ```bash
-    dd if=finnix-124.iso of=/dev/sdX
-    ```
+    - dd
+
+      ```bash
+      dd if=finnix-124.iso of=/dev/sdX
+      ```
 
 ## 安装 OpenWRT
 
-将软路由设备的 LAN2 接上能自动分配 IP 并能上网的网线，将 Finnix U 盘插在软路由 USB 口上，然后开机，从 U 盘启动（关于这点自行 Google）进入 Finnix 系统。
+将软路由设备的 LAN2 接上能自动分配 IP 并能上网的网线，将 Finnix U 盘插在软路由 USB 口上，然后开机，从 U 盘启动（关于这点自行
+Google）进入 Finnix 系统。
 
 下载并解压 OpenWRT 最新的系统文件。
 
@@ -95,7 +97,8 @@ sdb 8:16 1 7.5G 0 disk
 zram0 253:0 0 1.9G 0 disk [SWAP]
 ```
 
-可以看到 sda 磁盘仅仅分了 2 个区，且 2 个区总空间才 200 多 MB。sda1 是引导分区，sda2 是 OpenWRT 的系统分区，这里只要将磁盘剩余没有使用上的空间追加到 sda2 分区上就可以了。
+可以看到 sda 磁盘仅仅分了 2 个区，且 2 个区总空间才 200 多 MB。sda1 是引导分区，sda2 是 OpenWRT 的系统分区，这里只要将磁盘剩余没有使用上的空间追加到
+sda2 分区上就可以了。
 
 使用 `fdisk` 重新分配 sda2 分区大小。
 
@@ -212,13 +215,13 @@ openwrt 默认 LAN2（eth1） 为 WAN 口，LAN1（eth0）为 LAN 口，将 WAN 
 - eth3: LAN4
 
 - 设置 LAN 为 eth1。
-  - 网络 - 接口 - LAN - 编辑 - 物理设置
-  - 接口: eth1
-  - 保存
+    - 网络 - 接口 - LAN - 编辑 - 物理设置
+    - 接口: eth1
+    - 保存
 - 设置 WAN 口为 eth0。
-  - 网络 - 接口 - WAN - 编辑 - 物理设置
-  - 接口：eth0
-  - 保存
+    - 网络 - 接口 - WAN - 编辑 - 物理设置
+    - 接口：eth0
+    - 保存
 - 保存并应用
 
 {% asset 2021-02-26-x86-64-install-openwrt-exchange-wan-illustrate.png alt=openwrt-exchange-wan-illustrate %}
@@ -235,21 +238,21 @@ openwrt 默认只设置了 LAN2（eth1）和 LAN1（eth0）接口，其余物理
 ### 禁用 IPv6
 
 - 关闭 LAN 口分配 IPv6 IP。
-  - 网络 - 接口 - LAN - 编辑 - 常规设置
-  - IPv6 分配长度：已禁用
-  - 保存
+    - 网络 - 接口 - LAN - 编辑 - 常规设置
+    - IPv6 分配长度：已禁用
+    - 保存
 - 关闭 IPv6 DHCP
-  - 网络 - 接口 - LAN - 编辑 - DHCP 服务器 - IPv6 设置
-  - 路由通告服务：已禁用
-  - DHCPv6 服务：已禁用
-  - 保存
+    - 网络 - 接口 - LAN - 编辑 - DHCP 服务器 - IPv6 设置
+    - 路由通告服务：已禁用
+    - DHCPv6 服务：已禁用
+    - 保存
 - 关闭 IPv6 WAN 口
-  - 网络 - 接口 - WAN6
-  - 停止
+    - 网络 - 接口 - WAN6
+    - 停止
 - 禁止 IPv6 WAN 功能自动启动
-  - 网络 - 接口 - WAN6 - 编辑 - 常规设置
-  - 开机自动运行：取消勾选
-  - 保存
+    - 网络 - 接口 - WAN6 - 编辑 - 常规设置
+    - 开机自动运行：取消勾选
+    - 保存
 - 保存并应用
 
 ### 替换现有路由器
@@ -258,12 +261,13 @@ openwrt 默认只设置了 LAN2（eth1）和 LAN1（eth0）接口，其余物理
 
 - 猫设置成路由模式，既拨号又充当路由器，电信目前最新的猫都带路由功能且有 WiFi，默认是这种方式。
 
-  这种方式的话，OpenWRT 不用更改 WAN 口协议，默认的 DHCP 客户端模式就可以，但是可能要更改一下 LAN 口的网段，确保别和猫的 LAN 口网段冲突。
+  这种方式的话，OpenWRT 不用更改 WAN 口协议，默认的 DHCP 客户端模式就可以，但是可能要更改一下 LAN 口的网段，确保别和猫的 LAN
+  口网段冲突。
 
-  - 网络 - 接口 - LAN - 编辑 - 常规设置
-    - IPv4 地址：根据实际情况填写，10.0.0.1 或 172.16.0.1 或 192.168.1.1
-    - IPv4 子网掩码：根据实际情况填写，255.255.255.0
-  - 保存并应用
+    - 网络 - 接口 - LAN - 编辑 - 常规设置
+        - IPv4 地址：根据实际情况填写，10.0.0.1 或 172.16.0.1 或 192.168.1.1
+        - IPv4 子网掩码：根据实际情况填写，255.255.255.0
+    - 保存并应用
 
   LAN 口 IPv4 地址更改后，LuCI 的登录地址也会对应变成更改后的地址。
 
@@ -271,13 +275,13 @@ openwrt 默认只设置了 LAN2（eth1）和 LAN1（eth0）接口，其余物理
 
   需要将 OpenWRT 的 WAN 口协议更改为 PPPoE，并填写宽带运营商提供的账号密码。
 
-  - 网络 - 接口 - WAN - 编辑 - 常规设置
-    - 协议：PPPoE
-    - 确定要切换协议？：切换协议
-    - PAP/CHAP 用户名：宽带运营商提供的账号
-    - PAP/CHAP 密码：宽带运营商提供的密码
-    - 保存
-  - 保存并应用
+    - 网络 - 接口 - WAN - 编辑 - 常规设置
+        - 协议：PPPoE
+        - 确定要切换协议？：切换协议
+        - PAP/CHAP 用户名：宽带运营商提供的账号
+        - PAP/CHAP 密码：宽带运营商提供的密码
+        - 保存
+    - 保存并应用
 
 ## 其他
 
