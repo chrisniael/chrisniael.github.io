@@ -28,7 +28,7 @@ date: 2020-05-06 12:11:31 +0800
 
 ## 原理
 
-{% asset 2020-05-06-keyboard-usb2ps2.png alt=keyboard-usb2ps2 %}
+![](/assets/2020-05-06-keyboard-usb2ps2.png)
 
 将 USB HID 键盘 Scan Code 转化为 PS/2 Scan Code (set 2)，实现了 PS/2 键盘初始化时与电脑交互协议（让电脑认为 Arduino 是 PS/2 键盘），并模拟了实现了键盘 typematic rate 和 typematic delay 的特点。
 

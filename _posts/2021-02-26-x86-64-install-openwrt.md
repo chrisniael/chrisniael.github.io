@@ -170,7 +170,7 @@ reboot
 
 openwrt 默认 LAN2（eth1） 为 wan 口，LAN1（eth0） 位 lan 口。
 
-{% asset 2021-02-26-x86-64-install-openwrt-link-illustrate.png alt=openwrt-link-illustrate %}
+![](/assets/2021-02-26-x86-64-install-openwrt-link-illustrate.png)
 
 - 将 LAN2 口插入能自动分配 IP 且能上网的网线。
 - 将 LAN1 口与电脑通过网线连接
@@ -224,7 +224,7 @@ openwrt 默认 LAN2（eth1） 为 WAN 口，LAN1（eth0）为 LAN 口，将 WAN 
     - 保存
 - 保存并应用
 
-{% asset 2021-02-26-x86-64-install-openwrt-exchange-wan-illustrate.png alt=openwrt-exchange-wan-illustrate %}
+![](/assets/2021-02-26-x86-64-install-openwrt-exchange-wan-illustrate.png)
 
 ### 桥接所有 LAN 口
 

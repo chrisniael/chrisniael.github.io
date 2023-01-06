@@ -11,7 +11,7 @@ Arch 操作系统，TT 散热设备：
 
 连接方式：
 
-{% asset 2021-03-09-chassis-tt-rgb-fan-linux-driver-device-link-ilustration alt=device-link-illustration %}
+![](/assets/2021-03-09-chassis-tt-rgb-fan-linux-driver-device-link-ilustration.png)
 
 这里要注意的是机箱的 3 个散热风扇都没有接在主板的 **CHA_FAN** 接口上，这样 BIOS 里针对 **CHA_FAN** 接口提供的风扇转速调整策略就不能用了。CPU 的散热器还是连接了主板的 **CPU_FAN** 接口了，从 BIOS 里能看到 CPU 的温度和散热风扇的转速情况。
 
@@ -71,7 +71,7 @@ lighting_manager:
 
   这里要指定每个控制盒的编号，以及每个控制盒上连接的设置的型号，控制器编号由在控制盒背面的 DIP 开关来设置，开关状态对应的编号如下图：
 
-  {% asset 2021-03-09-chassis-tt-rgb-fan-linux-driver-controller-dip-number alt=controller-dip-number %}
+  ![](/assets/2021-03-09-chassis-tt-rgb-fan-linux-driver-controller-dip-number.png)
 
   如果有多个控制盒，确保每个控制盒的编号不会重复。
 

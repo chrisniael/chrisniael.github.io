@@ -7,72 +7,48 @@
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-lang: zh
-author: 沈煜
+
 title: 沈煜的博客
 email: shenyu@shenyu.me
-description: >- # this means to ignore newlines until "baseurl:"
-  沈煜的博客
+# description: >- # this means to ignore newlines until "baseurl:"
+#   Write an awesome description for your new site here. You can edit this
+#   line in _config.yml. It will appear in your document head meta (for
+#   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://shenyu.me" # the base hostname & protocol for your site, e.g. http://example.com
-github_username: chrisniael
-icp: 苏ICP备16021330号
-
-# jekyll-seo-tag 配置
-google_site_verification: JPOVQK_Yfsgx-Sk7EUPSh-yHk18YyJvPpImI3H287CY
-social:
-  name: 沈煜
-  links:
-    - https://github.com/chrisniael
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+# twitter_username: jekyllrb
+github_username:  chrisniael
 
 # Build settings
-markdown: kramdown
-show_excerpts: false
-excerpt_separator: <!--excerpt-->
-minima:
-  date_format: "%Y年%-m月%-d日"
+theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-assets
-  - jekyll-seo-tag
-  - jekyll-paginate
 
-assets:
-  source_maps: true # false on JEKYLL_ENV=production
-  destination: "/assets"
-  compression: false # true on JEKYLL_ENV=production
-  gzip: false
-  defaults:
-    js: { integrity: false } # true on JEKYLL_ENV=production
-    css: { integrity: false } # true on JEKYLL_ENV=production
-    img: { integrity: false } # true on JEKYLL_ENV=production
-  caching:
-    path: ".jekyll-cache/assets"
-    type: file # Possible values: memory, file
-    enabled: true
-  sources:
-    - _assets/images
-    - _assets/css
-  cdn:
-    baseurl: false
-    destination: true
-    url: https://cdn.shenyu.me
-
-paginate: 10
-paginate_path: "/page:num/"
 # Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
 # exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
 #   - Gemfile
 #   - Gemfile.lock
-#   - node_modules
+#   - node_modules/
 #   - vendor/bundle/
 #   - vendor/cache/
 #   - vendor/gems/

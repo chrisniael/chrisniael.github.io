@@ -6,11 +6,11 @@ date: 2021-03-03 01:52:00 +0800
 
 近期使用 iOS 时发现，在 iOS 主界面下拉呼出搜索框搜索想要打开的 App 时，**Sira 建议** 栏时常完全不显示，就像下面这张截图这样子。
 
-{% asset ios-search-sira-recommend-empty.png alt=ios-search-sira-recommend-empty %}
+![](/assets/ios-search-sira-recommend-empty.png)
 
 **Sira 建议** 正常显示的化，应该是这个样子。
 
-{% asset ios-search-sira-recommend-ok.png alt=ios-search-sira-recommend-ok %}
+![](/assets/ios-search-sira-recommend-ok.png)
 
 我的手机是 SE2，系统版本是 iOS 14.4。
 
@@ -28,6 +28,6 @@ Apple 中国官方社区里有遇到类似问题的用户发了一篇[帖子](ht
 
 今天使用搜索功能，突然出现这样一幅画面（与新机器首次开机使用搜索功能时一样的），这一刻我意识到搜索功能应该恢复正常了。
 
-{% asset ios-search-sira-recommend-init.png alt=ios-search-sira-recommend-init %}
+![](/assets/ios-search-sira-recommend-init.png)
 
 用了一天下来，确实没有再出现 **Sira 建议** 不提示的情况，就是不知道怎么突然就触发这个功能初始化，然后就恢复正常了，有点莫名其妙，下次遇到类似问题还是应该直接去 Apple Store 线下实体店，让 Apple 的售后来解决，自己折腾踩坑白白浪费很多时间。

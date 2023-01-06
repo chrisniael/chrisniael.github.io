@@ -216,7 +216,7 @@ google-authenticator [<options>]
 
 安装完后，打开 Google Authenticator/谷歌动态口令 App，点击 `开始设置`，选择 `扫描条形码` 扫描上面 `google-authenticator` 命令生成的二维码，然后手机上就能看到对应的认证码了。
 
-{% asset 2016-09-03-centos-google-authenticator-app.png alt=centos-google-authenticator-app width=370 height=189 %}
+![](/assets/2016-09-03-centos-google-authenticator-app.png)
 
 这里的认证码每 30 秒变化一次，认证码上面的 `SHENYU.ME` 对应的是 `google-authenticator` 参数 `-i` 设置的发行商，认证码下面的 `shenyu@shenyu.me` 对应的是 `google-authenticator` 参数 `-l` 设置的标签，如果你没有通过 `google-authenticator` 的参数设置发行商和标签，默认会使用系统的 `hostname` 来作为发行商，标签则则使用用户名和 `hostname` 的组合，格式为 `username@hostname`，标签其实是后期可以通过手机App来修改的，而发行商则修改不了。
 
