@@ -61,10 +61,7 @@ fan_manager:
     - [90, 80]
   sensor_name: k10temp
 lighting_manager:
-  model: full
-  r: 0
-  g: 0
-  b: 0
+  model: "off"
 ```
 
 - controllers
