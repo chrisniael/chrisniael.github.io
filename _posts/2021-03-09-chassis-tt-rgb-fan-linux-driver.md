@@ -4,10 +4,12 @@ title: Linux 控制 TT 风扇转速与 RGB 灯效
 date: 2021-03-09 22:07:00 +0800
 ---
 
-Arch 操作系统，TT 散热设备：
+Arch Linux，默认不安装驱动的情况下，连接在 TT 风扇控制盒上的所有风扇会全速工作，噪音以及光污染很严重。
 
-- TT Level 20 GT RGB 机箱自带的 2 个 20cm 的 Riing Plus RGB 风扇和 1 个 14cm 的 Riing Plus RGB 风扇，带 1 个 TT 风扇控制盒（软件版本）
-- Floe Riing RGB 360 的 RGB 水泵 和冷排上的 3 个 12cm 的 Riing Plus RGB 风扇，带 1 个 TT 风扇控制盒（软件版本）
+机器上 TT 的散热设备：
+
+- TT Level 20 GT RGB 机箱自带的 2 个 20cm 的 Riing Plus RGB 风扇和 1 个 14cm 的 Riing Plus RGB 风扇，带 1 个 TT 风扇控制盒
+- Floe Riing RGB 360 的 RGB 水泵 和冷排上的 3 个 12cm 的 Riing Plus RGB 风扇，带 1 个 TT 风扇控制盒
 
 连接方式：
 
