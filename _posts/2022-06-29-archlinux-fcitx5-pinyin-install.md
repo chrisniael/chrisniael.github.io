@@ -4,7 +4,7 @@ title: Arch Linux 安装 Fcitx 5 拼音输入法
 date: 2022-06-29 00:14:00 +0800
 ---
 
-Arch Linux，GNOME (Wayland) 桌面系统。
+Arch Linux，GNOME (X11) 桌面系统。
 
 ## 安装
 
