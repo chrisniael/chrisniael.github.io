@@ -298,22 +298,22 @@ opkg update
 opkg install libustream-openssl ca-bundle ca-certificates
 ```
 
+### luci uHTTPd UI 管理
+
+```
+opkg update
+opkg install luci-app-uhttpd luci-i18n-uhttpd-zh-cn
+```
+
+LuCI 退出重新登录一下，然后就能在 **服务** 里看到 **uHTTPd** 选项了。
+
 ### luci(uHTTPd) 启用 https
 
 https://openwrt.org/docs/guide-user/luci/getting_rid_of_luci_https_certificate_warnings
 
 ```bash
 opkg update
-opkg install openssl-util luci-app-uhttpd
-```
-
-LuCI 退出重新登录一下，然后就能在 **服务** 里看到 **uHTTPd** 选项了。
-
-### luci uHTTPd 中文支持
-
-```
-opkg update
-opkg install luci-i18n-uhttpd-zh-cn
+opkg install openssl-util
 ```
 
 ### Package 镜像修改为国内源
