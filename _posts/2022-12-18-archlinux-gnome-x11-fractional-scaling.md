@@ -21,3 +21,7 @@ gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-sca
 注销，重新登陆。
 
 设置 - 显示器 - 缩放 - 150%
+
+## 问题
+
+部分软件不适配 150% 的缩放，比如 [Kodi](https://kodi.tv/) 全屏就会不铺满整个屏幕。
