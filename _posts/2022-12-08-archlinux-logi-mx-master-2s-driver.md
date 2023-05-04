@@ -17,45 +17,35 @@ yay -S logiops-git
 /etc/logid.cfg
 
 ```cfg
-devices: ({
-  name: "Wireless Mouse MX Master 2S";
-
-  // A lower threshold number makes the wheel switch to free-spin mode
-  // quicker when scrolling fast.
-  smartshift: { on: true; threshold: 20; };
-
-  hiresscroll:
-  {
-      hires: true;
-      invert: false;
-      target: true;
-      up: {
-          mode: "Axis";
-          axis: "REL_WHEEL_HI_RES";
-          axis_multiplier: 2;
-      },
-      down: {
-          mode: "Axis";
-          axis: "REL_WHEEL_HI_RES";
-          axis_multiplier: -2;
-      },
-  };
-
-  // Higher numbers make the mouse more sensitive (cursor moves faster),
-  // 4000 max for MX Master 3.
-  dpi: 800;
-
-  buttons: (
-
-    // Make thumb button 10.
-    // { cid: 0x53; action = { type: "Keypress"; keys: ["KEY_BACK"];    }; },
-
-    // Make top button 11.
-    // { cid: 0x56; action = { type: "Keypress"; keys: ["KEY_FORWARD"]; }; },
-
-    // Make top button gesture.
-    { cid: 0xc3; action = { type: "Keypress"; keys: ["KEY_LEFTMETA"]; }; }
-  );
+devices: (
+{
+    // 鼠标的设备名
+    // - Wireless Mouse MX Master
+    // - Wireless Mouse MX Master 2S
+    // - Wireless Mouse MX Master 3
+    name: "Wireless Mouse MX Master 2S";
+ 
+    // SmartShift 开关和灵敏度
+    smartshift:
+    {
+        on: true;
+        threshold: 20;
+    };
+ 
+    // 灵敏度
+    dpi: 800;
+  
+    buttons: (
+        // 手势按钮映射为 Left Meta 键
+        {
+            cid: 0xc3;
+            action =
+            {
+                type: "Keypress";
+                keys: ["KEY_LEFTMETA"];
+            };
+        }
+    );
 });
 ```
 
