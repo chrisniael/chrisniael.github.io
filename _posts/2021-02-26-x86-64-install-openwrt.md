@@ -302,6 +302,7 @@ openwrt 默认只设置了 LAN2（eth1）和 LAN1（eth0）接口，其余物理
 ### 升级所有可以更新的软件
 
 ```bash
+opkg update
 opkg upgrade $(opkg list-upgradable | awk '{print $1}')
 ```
 
@@ -314,7 +315,7 @@ opkg install libustream-openssl ca-bundle ca-certificates
 
 ### luci uHTTPd UI 管理
 
-```
+```bash
 opkg update
 opkg install luci-app-uhttpd luci-i18n-uhttpd-zh-cn
 ```
