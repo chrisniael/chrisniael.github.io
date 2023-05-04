@@ -22,14 +22,25 @@ OpenWRT 的安装过程本质上来说就是将 OpenWRT 系统镜像写入软路
 
 - Windows
     - [Rufus](https://rufus.ie)
+    - [USBWriter](https://sourceforge.net/projects/usbwriter/)
+    - [Etcher](https://www.balena.io/etcher/)
 - Mac
+    - dd
+
+      ```bash
+      dd if=finnix-124.iso bs=1M of=/dev/sdX
+      ```
+
     - [Etcher](https://www.balena.io/etcher/)
 - Linux
     - dd
 
       ```bash
-      dd if=finnix-124.iso of=/dev/sdX
+      dd if=finnix-124.iso bs=1M of=/dev/sdX
       ```
+
+    - [WoeUSB-ng](https://github.com/WoeUSB/WoeUSB-ng)
+    - [Etcher](https://www.balena.io/etcher/)
 
 ## 安装 OpenWRT
 
