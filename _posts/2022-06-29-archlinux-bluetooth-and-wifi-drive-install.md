@@ -63,5 +63,5 @@ systemctl enable NetworkManager.service
 
 ## 参考
 
-- <https://wiki.archlinux.org/title/Bluetooth_(简体中文)>
-- <https://wiki.archlinux.org/title/NetworkManager_(简体中文)>
+- [Bluetooth](https://wiki.archlinux.org/title/Bluetooth_(简体中文)), wiki.archlinux.org
+- [NetworkManager](https://wiki.archlinux.org/title/NetworkManager_(简体中文)), wiki.archlinux.org
