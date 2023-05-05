@@ -87,7 +87,7 @@ GLFW_IM_MODULE=ibus
 
 - PuTTY 终端内无法使用 fcitx
 
-  编辑 /usr/share/applications/putty.desktop
+  编辑 /usr/share/applications/putty.desktop，或者拷贝 /usr/share/applications/putty.desktop 至 ~/.local/share/applications/putty.desktop，这样 putty 升级时配置就不会被重置。
 
   ```text
   Exec=env GTK_IM_MODULE=xim putty %u
