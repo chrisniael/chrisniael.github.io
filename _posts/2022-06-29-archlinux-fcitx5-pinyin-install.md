@@ -97,6 +97,6 @@ GLFW_IM_MODULE=ibus
 
 ## 参考
 
-- <https://wiki.archlinux.org/title/Fcitx5_(简体中文)>
-- <https://wiki.archlinux.org/title/GNOME_(简体中文)>
-- <https://askubuntu.com/a/144971>
+- [Fcitx5](https://wiki.archlinux.org/title/Fcitx5_(简体中文)), wiki.archlinux.org
+- [GNOME](https://wiki.archlinux.org/title/GNOME_(简体中文)), wiki.archlinux.org
+- [Set variable in .desktop file](https://askubuntu.com/a/144971), askubuntu.com
