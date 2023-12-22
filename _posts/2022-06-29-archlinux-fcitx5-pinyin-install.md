@@ -4,7 +4,7 @@ title: Arch Linux 安装 Fcitx 5 拼音输入法
 date: 2022-06-29 00:14:00 +0800
 ---
 
-Arch Linux，GNOME (X11) 桌面系统。
+Arch Linux，GNOME 桌面环境。
 
 ## 安装
 
@@ -26,7 +26,7 @@ pacman -S fcitx5-chinese-addons
 
 ### 环境变量
 
-/etc/environment
+/etc/environment，需要 root 权限
 
 ```bash
 GTK_IM_MODULE=fcitx
@@ -35,6 +35,17 @@ XMODIFIERS=@im=fcitx
 INPUT_METHOD=fcitx
 SDL_IM_MODULE=fcitx
 GLFW_IM_MODULE=ibus
+```
+
+如果使用 zsh 的话，也可以放在 *~/.zshenv* 中 export 这些变量，放这里好处是不用 root 权限了。bash 用户也是类似，可以在 *~/.bash_profile* 里 export 这些变量
+
+```bash
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export INPUT_METHOD=fcitx
+export SDL_IM_MODULE=fcitx
+export GLFW_IM_MODULE=ibus
 ```
 
 配置完后重启生效。
@@ -87,6 +98,8 @@ GLFW_IM_MODULE=ibus
 
 - PuTTY 终端内无法使用 fcitx
 
+  ### X11
+
   编辑 /usr/share/applications/putty.desktop，或者拷贝 /usr/share/applications/putty.desktop 至 ~/.local/share/applications/putty.desktop，这样 putty 升级时配置就不会被重置。
 
   ```text
@@ -94,6 +107,10 @@ GLFW_IM_MODULE=ibus
   ```
 
   重新打开 putty 生效。
+
+  ### Wayland
+
+  Wayland 桌面目前暂时没找到解决方案支持。
 
 ## 参考
 
