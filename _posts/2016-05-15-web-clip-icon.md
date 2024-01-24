@@ -2,6 +2,7 @@
 layout: post
 title: Safari Web Clip 图标
 date: 2016-05-15 12:50:00 +0800
+published: false
 ---
 
 在 IOS 中，你可以将某个网页链接添加到桌面上，方便你快速打开，这个被添加到桌上的链接被成为 Web Clip，类似于 Windows 的桌面快捷方式。和 Windows 的快捷方式一样，Web Clip 的链接是依附在一个图标上的，点击这个图标会启动 Safari 打开链接的网站，Web Clip 使的 Web App 表现的和 Native App 极其相似。
