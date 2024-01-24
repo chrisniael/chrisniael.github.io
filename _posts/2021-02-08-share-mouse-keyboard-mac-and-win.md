@@ -2,6 +2,7 @@
 layout: post
 title: Mac 与 Windows 鼠键共用方案
 date: 2021-02-08 20:54:00 +0800
+published: false
 ---
 
 有同时使用 Mac 和 Windows 的需求，Mac 主，Windows 从，但这样子需要使用 2 套鼠标键盘来分别控制 Mac 和 Windows，所有就探索一下现有的一些解决方案，实现在 Mac 与 Windows 之间共用同一套鼠标键盘，暂时没有找到很完美的，下面记录了一下各自的优缺点。
