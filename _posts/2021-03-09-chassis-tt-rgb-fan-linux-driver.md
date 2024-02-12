@@ -56,12 +56,11 @@ controllers:
 fan_manager:
   model: curve
   points:
-    - [0, 0] # [temp(*C), speed(0-100%)]
-    - [40, 0]
-    - [60, 30]
-    - [70, 50]
-    - [90, 80]
-  sensor_name: k10temp
+    - [0, 10] # [temp(*C), speed(0-100%)]
+    - [60, 10]
+    - [70, 30]
+    - [100, 100]
+  sensor_name: asus_wmi_sensors
 lighting_manager:
   model: "off"
 ```
@@ -95,42 +94,57 @@ lighting_manager:
   `sensor_name` 可以通过 `sensors` 命令查看具体名字，以我的设备为例子，执行 `sensors` 命令的输出为：
 
   ```bash
-  k10temp-pci-00db
-  Adapter: PCI adapter
-  Tctl:         +53.0°C
-  Tdie:         +26.0°C
+  asus_wmi_sensors-virtual-0
+  Adapter: Virtual device
+  CPU Core Voltage:             828.00 mV 
+  CPU SOC Voltage:                1.09 V  
+  DRAM AB Voltage:                1.20 V  
+  DRAM CD Voltage:                1.20 V  
+  1.8V PLL Voltage:               1.81 V  
+  +12V Voltage:                  11.77 V  
+  +5V Voltage:                    5.04 V  
+  3VSB Voltage:                   3.33 V  
+  VBAT Voltage:                   3.07 V  
+  AVCC3 Voltage:                  3.33 V  
+  SB 1.05V Voltage:               1.05 V  
+  CPU Core Voltage:               1.39 V  
+  CPU SOC Voltage:                1.04 V  
+  DRAM AB Voltage:                1.21 V  
+  DRAM CD Voltage:                1.20 V  
+  CPU Fan:                      1748 RPM
+  Chassis Fan 1:                   0 RPM
+  Chassis Fan 2:                   0 RPM
+  HAMP Fan:                        0 RPM
+  Water Pump 1:                    0 RPM
+  CPU OPT:                         0 RPM
+  Water Flow:                      0 RPM
+  Waterblock Flow:                 0 RPM
+  EXT Fan 1:                       0 RPM
+  EXT Fan 2:                       0 RPM
+  EXT Fan 3:                       0 RPM
+  Cover Fan:                       0 RPM
+  CPU Temperature:               +55.0°C  
+  CPU Socket Temperature:        +54.0°C  
+  Motherboard Temperature:       +30.0°C  
+  Chipset Temperature:           +54.0°C  
+  Tsensor 1 Temperature:        +216.0°C  
+  CPU VRM Temperature:           +49.0°C  
+  Water In:                     +216.0°C  
+  Water Out:                    +216.0°C  
+  Waterblock In:                +216.0°C  
+  Waterblock Out:               +216.0°C  
+  EXT Tsensor 1:                  +0.0°C  
+  EXT Tsensor 2:                  +0.0°C  
+  EXT Tsensor 3:                  +0.0°C  
+  Tsensor 2 Temperature:        +216.0°C  
+  DIMM.2 Tsensor 1 Temperature: +216.0°C  
+  DIMM.2 Tsensor 2 Temperature: +216.0°C  
+  CPU VRM Output Current:         6.00 A
 
-  k10temp-pci-00cb
-  Adapter: PCI adapter
-  Tctl:         +52.0°C
-  Tdie:         +25.0°C
-
-  nvme-pci-0700
-  Adapter: PCI adapter
-  Composite:    +34.9°C  (low  = -273.1°C, high = +80.8°C)
-                         (crit = +80.8°C)
-  Sensor 1:     +34.9°C  (low  = -273.1°C, high = +65261.8°C)
-  Sensor 2:     +38.9°C  (low  = -273.1°C, high = +65261.8°C)
-
-  enp5s0-pci-0500
-  Adapter: PCI adapter
-  MAC Temperature:  +42.4°C
-
-  k10temp-pci-00d3
-  Adapter: PCI adapter
-  Tctl:         +58.9°C
-  Tdie:         +31.9°C
-
-  k10temp-pci-00c3
-  Adapter: PCI adapter
-  Tctl:         +59.4°C
-  Tdie:         +32.4°C
-  Tccd1:        +52.2°C
-  Tccd2:        +52.2°C
-  Tccd3:        +52.8°C
+  ...
   ```
 
-  则 `sensor_name` 为 `k10temp`（去掉后缀 `-pci-****`）。
+  则 `sensor_name` 为 `asus_wmi_sensors`（去掉后缀 `-virtual-0`）。
 
 ## 启动 linux-thermaltake-rgb
 
