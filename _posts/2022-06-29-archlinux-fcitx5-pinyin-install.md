@@ -20,7 +20,7 @@ pacman -S fcitx5-chinese-addons
 
 打开扩展的链接，把页面上方的按钮按成 ON，然后会弹出安装的提示窗，点击安装。
 
-用 GNOME 自带的浏览器 Epiphany 可以直接安装 [extensions.gnome.org](extensions.gnome.org) 里的扩展。如果是 Chrome 则需先安装 [chrome-gnome-shell](https://aur.archlinux.org/packages/chrome-gnome-shell/) ，并安装 Chrome 插件 [GNOME Shell integration](https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep)
+用 GNOME 自带的浏览器 Epiphany 可以直接安装 [extensions.gnome.org](https://extensions.gnome.org) 里的扩展。如果是 Chrome 则需先安装 [chrome-gnome-shell](https://aur.archlinux.org/packages/chrome-gnome-shell/) ，并安装 Chrome 插件 [GNOME Shell integration](https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep)
 
 ## 配置
 
