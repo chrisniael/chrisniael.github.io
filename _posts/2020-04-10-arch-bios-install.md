@@ -289,6 +289,20 @@ pacman -S gnome gnome-extra
 systemctl enable gdm
 ```
 
+## 安装 NetworkManager
+
+```shell
+pacman -S networkmanager
+systemctl enable NetworkManager.service
+```
+
+## 新建用户
+
+```bash
+useradd -m <username>
+passwd <username>
+```
+
 ## 重新启动
 
 ```bash
@@ -322,13 +336,6 @@ reboot
   # /etc/ssh/sshd_config
 
   X11Forwarding yes
-  ```
-
-- 新建用户
-
-  ```bash
-  useradd -m <username>
-  passwd <username>
   ```
 
 - 安装 Yay
