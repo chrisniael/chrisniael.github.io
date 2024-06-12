@@ -11,7 +11,7 @@ Arch Linux，GNOME 桌面环境。
 ```bash
 su -
 pacman -S fcitx5-im
-pacman -S fcitx5-chinese-addons 
+pacman -S fcitx5-chinese-addons
 ```
 
 ## 安装 Kimpannel 扩展
@@ -22,11 +22,24 @@ pacman -S fcitx5-chinese-addons
 
 用 GNOME 自带的浏览器 Epiphany 可以直接安装 [extensions.gnome.org](https://extensions.gnome.org) 里的扩展。如果是 Chrome 则需先安装 [chrome-gnome-shell](https://aur.archlinux.org/packages/chrome-gnome-shell/) ，并安装 Chrome 插件 [GNOME Shell integration](https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep)
 
+也可以自行编译安装。
+
+```shell
+pacman -S cmake zip
+git clone https://github.com/wengxt/gnome-shell-extension-kimpanel.git
+cd gnome-shell-extension-kimpanel/
+./install.sh
+```
+
+重启一下，然后在 **Extensions** 应用里启用 **Input Method Pannel** 扩展。
+
 ## 安装中文字体
 
 ```shell
 pacman -S noto-fonts-cjk
 ```
+
+安装完字体后，重启一下生效。
 
 ## 配置
 
