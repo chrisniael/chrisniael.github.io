@@ -22,6 +22,12 @@ pacman -S fcitx5-chinese-addons
 
 用 GNOME 自带的浏览器 Epiphany 可以直接安装 [extensions.gnome.org](https://extensions.gnome.org) 里的扩展。如果是 Chrome 则需先安装 [chrome-gnome-shell](https://aur.archlinux.org/packages/chrome-gnome-shell/) ，并安装 Chrome 插件 [GNOME Shell integration](https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep)
 
+## 安装中文字体
+
+```shell
+pacman -S noto-fonts-cjk
+```
+
 ## 配置
 
 ### 环境变量
