@@ -318,6 +318,12 @@ reboot
   timedatectl set-ntp true
   ```
 
+- 安装 man page
+
+  ```bash
+  pacman -S man-db man-pages
+  ```
+
 - 安装配置 openssh
 
   ```bash
