@@ -23,7 +23,7 @@ devices: (
     // - Wireless Mouse MX Master
     // - Wireless Mouse MX Master 2S
     // - Wireless Mouse MX Master 3
-    name: "Wireless Mouse MX Master 2S";
+    name: "Wireless Mouse MX Master 3";
  
     // SmartShift 开关和灵敏度
     smartshift:
@@ -33,7 +33,7 @@ devices: (
     };
  
     // 灵敏度
-    dpi: 800;
+    dpi: 1000;
   
     buttons: (
         // 手势按钮映射为 Left Meta 键
@@ -41,8 +41,18 @@ devices: (
             cid: 0xc3;
             action =
             {
-                type: "Keypress";
-                keys: ["KEY_LEFTMETA"];
+                type: "Gestures";
+                gestures: (
+                  {
+                    direction: "None";
+                    mode: "OnRelease";
+                    action =
+                    {
+                      type: "Keypress";
+                      keys: ["KEY_LEFTMETA"];
+                    }
+                  }
+                )
             };
         }
     );
