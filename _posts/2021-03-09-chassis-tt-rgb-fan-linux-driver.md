@@ -181,16 +181,16 @@ sudo systemctl enable linux-thermaltake-rgb.service  # 开机自动启动
   yaml 最新版本[不兼容](https://github.com/chestm007/linux_thermaltake_riing/pull/53/files)导致的，改一下源码，兼容最新版本的 yaml。
 
   ```diff
-  /usr/lib/python3.10/site-packages/linux_thermaltake_rgb/daemon/config.py
-   @@ -58,7 +58,7 @@ def load_config(self):
-
-         cfg = ''.join(cfg_lines)
-         LOGGER.debug('raw config file\n** start **\n\n%s\n** end **\n', cfg)
-  -      return yaml.load(cfg)
-  +      return yaml.load(cfg, Loader=yaml.FullLoader)
-
-     def parse_config(self, config):
-             self.controllers = config.get('controllers')
+  /usr/lib/python3.13/site-packages/linux_thermaltake_rgb/daemon/config.py
+  @@ -39,7 +39,7 @@
+                   self.config_dir = self.rel_config_dir
+   
+           with open('{}/{}'.format(self.config_dir, self.config_file_name)) as cfg:
+  -            config = yaml.load(cfg)
+  +            config = yaml.load(cfg, Loader=yaml.FullLoader)
+               self.controllers = config.get('controllers')
+               LOGGER.debug(config.get('controllers'))
+               # self.devices = config.get('devices')
   ```
 
 ## 缺点
