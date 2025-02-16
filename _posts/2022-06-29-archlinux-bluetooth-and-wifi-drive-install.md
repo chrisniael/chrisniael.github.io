@@ -8,14 +8,14 @@ Arch Linux，GNOME 桌面环境，主板型号：ROG ZENITH EXTREME。
 
 ## 蓝牙
 
-### 安装
+[bluez](https://archlinux.org/packages/?name=bluez) 包系统默认会安装，无需再手动安装，这个包提供蓝牙协议栈，但是默认没有设置它的服务自动启动，这里需要手动设置并启动一下。
+
+### 启动蓝牙服务
 
 ```bash
 su -
-pacman -S bluez
-pacman -S bluez-utils
-systemctl start bluetooth.service
-systemctl enable bluetooth.service
+pacman -S bluez  ## 最新版本 Arch Linux 默认已安装
+systemctl enable --now bluetooth.service
 ```
 
 ### 开机自动打开蓝牙
@@ -27,30 +27,9 @@ systemctl enable bluetooth.service
 AutoEnable=true
 ```
 
-### 蓝牙耳机/音响
+### 蓝牙音频服务
 
-```bash
-su -
-pacman -S pulseaudio-bluetooth
-```
-
-连接上设备后自动切换输出源至新连接上的设备
-
-/etc/pulse/system.pa
-
-```text
-load-module module-bluetooth-policy
-load-module module-bluetooth-discover
-load-module module-switch-on-connect
-```
-
-将当前用户添加至 `lp` 用户组中
-
-```bash
-sudo usermod -aG docker $USER
-```
-
-重启生效。
+最新版本 Arch Linux 已经使用 [PipeWire](https://wiki.archlinuxcn.org/wiki/PipeWire) 替代 [PulseAudio](https://wiki.archlinuxcn.org/wiki/PulseAudio)，且默认已经安装，且无需做再多的配置就能正常工作。
 
 ## Wi-Fi
 
