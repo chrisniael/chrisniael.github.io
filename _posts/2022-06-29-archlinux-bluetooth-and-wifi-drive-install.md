@@ -4,7 +4,7 @@ title: Arch Linux 安装蓝牙和 Wi-Fi 驱动
 date: 2022-06-29 01:20:00 +0800
 ---
 
-Arch Linux，GNOME 桌面环境，主板型号：ROG ZENITH EXTREME。
+Arch Linux，GNOME Wayland 桌面环境，主板型号：ROG ZENITH EXTREME。
 
 ## 蓝牙
 
