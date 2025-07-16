@@ -386,7 +386,7 @@ GitWeb 是 Git 自带一个 CGI 脚本，它提供了一个浏览 Git 仓库信�
 
   * 访问 GitWeb
 
-    使用浏览器打开上面 Nginx 配置的域名，这里使用的是 [http://git.shenyu.me](http://git.shenyu.me)。
+    使用浏览器打开上面 Nginx 配置的域名，这里使用的是 [https://git.shenyu.me](https://git.shenyu.me)。
 
 ## htpasswd
 
@@ -426,7 +426,7 @@ htpasswd 可以用来给网站做简单的加密访问功能，这里将它用�
   nginx -s reload
   ```
 
-现在访问 <http://git.shenyu.me> 就需要输入账号和密码了。
+现在访问 <https://git.shenyu.me> 就需要输入账号和密码了。
 
 ## 参考链接
 

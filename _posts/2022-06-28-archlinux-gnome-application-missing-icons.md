@@ -16,4 +16,4 @@ sudo gtk-update-icon-cache -t -f /usr/share/icons/hicolor
 
 ## 参考
 
-- [archlinux: annoying missing icons](http://wb-hk.blogspot.com/2016/09/archlinux-annoying-missing-icons.html), wb-hk.blogspot.com
+- [archlinux: annoying missing icons](https://wb-hk.blogspot.com/2016/09/archlinux-annoying-missing-icons.html), wb-hk.blogspot.com

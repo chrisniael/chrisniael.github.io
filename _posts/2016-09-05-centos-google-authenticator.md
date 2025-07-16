@@ -226,4 +226,4 @@ google-authenticator [<options>]
 
 * [Google Authenticator](https://github.com/google/google-authenticator), github.com
 * [Playing with two-factor authentication in Linux using Google Authenticator](https://blog.remibergsma.com/2013/06/08/playing-with-two-facor-authentication-in-linux-using-google-authenticator/), Remi Bergsma
-* [Two-Step Authentication For SSH On Centos 6 Using Google Authenticator](http://blog.nowherelan.com/2014/01/04/two-step-authentication-for-ssh-on-centos-6-using-google-authenticator/), David Lehman
+* [Two-Step Authentication For SSH On Centos 6 Using Google Authenticator](https://blog.nowherelan.com/2014/01/04/two-step-authentication-for-ssh-on-centos-6-using-google-authenticator/), David Lehman
