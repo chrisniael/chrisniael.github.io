@@ -16,7 +16,7 @@ yay -S logiops-git
 
 /etc/logid.cfg
 
-```txt
+```text
 devices: (
 {
     // 鼠标的设备名
